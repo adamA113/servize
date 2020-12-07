@@ -37,10 +37,21 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'servizeDB'
+    'corsheaders',            # add this
+    'rest_framework',         # add this
+    # add name of applications here
+    'Category',
+    'ServiceProvider',
+    'User',
+    'SubCategory',
+    'Location',
+    'Reviews',
+
+
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',    # add this
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -81,8 +92,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'servizeDB', 
         'USER': 'postgres', 
-        'PASSWORD': 'student',
-        'HOST': '127.0.0.1', 
+        'PASSWORD': '741987',
+        'HOST': 'localhost', 
         'PORT': '5432',
     }
 }
