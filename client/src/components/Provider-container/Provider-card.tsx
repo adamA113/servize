@@ -19,8 +19,8 @@ const ProviderCard = ({ prov }: { prov: any }) => {
             <img src={prov.picture} alt="Avatar" />
             <div className="container">
                 <h4><b>{prov.name}</b></h4>
-                {/* <p>Architect Engineer</p> */}
-                <button onClick={handleClick}>Learn More {prov.catname}</button>
+                <p>{prov.phone}</p>
+                <button onClick={handleClick}>Learn More {prov.email}</button>
             </div>
         </div>
 

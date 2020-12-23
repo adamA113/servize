@@ -28,7 +28,7 @@ const Categories = (props:any) => {
         axios.get(`http://localhost:8000/category/`)
 
             .then((result: any) => {
-                console.log("axios", result.data)
+                // console.log("axios", result.data)
                 // dispatch(store(result.data))
                 setCat(result.data)
 

@@ -20,8 +20,8 @@ import axios from "axios";
 //         console.log("action error", e)
 //     }
 // }
-export const getProv = (city: string, providers: object) => (dispatch: Dispatch<DispatchProvTypes>) => {
+export const getProv = (category: string, providers: any[]) => (dispatch: Dispatch<DispatchProvTypes>) => {
     // console.log(username, email, password )
-    dispatch({ type: GET_PROV, payload: { city, providers } })
+    dispatch({ type: GET_PROV, payload: { category, providers } })
 }
 
