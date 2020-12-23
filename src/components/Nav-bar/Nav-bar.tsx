@@ -70,17 +70,17 @@ const Navbar = () => {
                 <div id="mySidenav" className="sidenav">
                     <a href="javascript:void(0)" className="closebtn" onClick={closeClick}>&times;</a>
                     <a href="#">About</a>
-                    <a href="#">{t("how_it_works")}</a>
+                    <a href="#">{t("How it Works")}</a>
                     <a href="#">Browse Jobs</a>
                     <a href="#">Contact</a>
                 </div>
                 
                 <a href="/" className="logo">
-                    {t("app_name")}
+                    {t("Servize")}
                 </a>
                 <span className="menu">
                     <ul>
-                        <li className="pc-view"><a href="#">{t("how_it_works")}</a></li>
+                        <li className="pc-view"><a href="#">{t("How it Works")}</a></li>
                         <li className="pc-view"><a href="#">Browse Jobs</a></li>
                         <li className="lang-dropdown">
                             {/* <button onClick={selectLang} className="lang-dropbtn">Languages</button> */}
@@ -92,9 +92,9 @@ const Navbar = () => {
                         </li>
                         {token === null ?
                         <span>
-                            <li><Link to="/user/login">{t("log_in")}</Link></li>
+                            <li><Link to="/user/login">{t("Log In")}</Link></li>
                             {/* <li><Link to="/user/signup">{t("join")}</Link></li> */}
-                            <li onClick={handleClick}> <a href="#">{t("join")}</a></li>
+                            <li onClick={handleClick}> <a href="#">{t("Join")}</a></li>
                         </span>
                         :
                         <span>
