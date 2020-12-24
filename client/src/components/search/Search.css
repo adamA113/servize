@@ -85,7 +85,14 @@
  .city:before{
   font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f64f";
  }
-
+.searchfor{
+  margin-top: 1px;
+  width: 250px;
+  height: 50px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0);
+  padding:8px 70px ;
+  text-align: left;
+}
  
  .dropdown:hover::before{
   background: #707070;
@@ -100,10 +107,10 @@
 
  /* /////////////////////////////////////////////// */
  .search-sec{
-  background: #707070;padding: 1rem;
+  background: #707070;padding: 0rem;
   align-items: center;
   position: relative ;
-  margin: 0 auto;
+  margin: 0 0;
   /* display: inline-block; */
 }
 .search-slt{

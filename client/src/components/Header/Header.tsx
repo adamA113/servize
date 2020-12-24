@@ -6,6 +6,8 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 // import { Carousel } from 'react-responsive-carousel';
 // import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+// import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
+import 'pure-react-carousel/dist/react-carousel.es.css';
 // import faStyles from 'font-awesome/css/font-awesome.css'
 
 // import { Carousel } from 'mdb-ui-kit';
