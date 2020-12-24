@@ -13,7 +13,7 @@
   height: 100%;
   width: 0;
   position: fixed;
-  z-index: 1;
+  z-index: 1000;
   top: 0;
   left: 0;
   background-color: #111;
@@ -58,7 +58,7 @@
       line-height: 50px;
       position: fixed;
       float: left;
-      margin: 10px 46px;
+      margin: 0px 46px;
       color: rgb(0, 0, 0);
       font-weight: bold;
       font-size: 20px;
@@ -177,7 +177,7 @@ nav ul li {
 } */
 
 /* //////////////////////////////// */
-.carousel-item {
+/* .carousel-item {
 	height: 100vh;
 	min-height: 300px;
 }
@@ -254,4 +254,4 @@ nav ul li {
 		font-size: 14px;
 		font-weight: normal;
 	}
-}
+} */

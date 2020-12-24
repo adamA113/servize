@@ -1,6 +1,7 @@
 #signup {
     position: relative;
     top: -850px;
+    left: 370px;
     animation: popup 1s ease forwards;
     
 }

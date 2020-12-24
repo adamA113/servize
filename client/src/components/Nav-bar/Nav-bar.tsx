@@ -94,7 +94,8 @@ const Navbar = () => {
                             <span>
                                 <li><Link to="/user/login">{t("log_in")}</Link></li>
                                 {/* <li><Link to="/user/signup">{t("join")}</Link></li> */}
-                                <li onClick={handleClick}> <a href="#">{t("join")}</a></li>
+                                <li><Link to="/user/signup">{t("join")}</Link></li>
+                                
                             </span>
                             :
                             <span>

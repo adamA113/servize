@@ -17,7 +17,7 @@ const CategoriesCard = ({ user }: { user: any }) => {
         })
 
         .then((result: any) => {
-            // console.log("axios", result.data[0].providers)
+             console.log("axios", result.data[0].providers)
             dispatch(getProv(result.data[0].catName, result.data[0].providers ))
 
         })
@@ -30,8 +30,11 @@ const CategoriesCard = ({ user }: { user: any }) => {
 
         
             <div className="card card-block">
-                <img src={user} />
-                <h5 className="card-title mt-3 mb-3">Electrican</h5>
+            <img src={user.catImg} />
+            <button onClick={handleClick}>
+                <h5 className="card-title mt-3 mb-3"><Link to="/provider">{user.catName}</Link></h5>
+            </button>
+            
                 {/* <p className="card-text">This is a company that builds websites, web apps and e-commerce solutions.</p> */}
             </div>
     

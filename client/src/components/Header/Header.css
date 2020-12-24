@@ -29,7 +29,10 @@
 	color: #ffdf6c;
 	margin-top: 15px;
 }
-.navbar-nav a {
+.newheader{
+	margin-top: 80px;
+}
+/* .navbar-nav a {
 	font-family: poppins;
 	font-size: 18px;
 	text-transform: uppercase;
@@ -77,4 +80,4 @@
 		font-size: 14px;
 		font-weight: normal;
 	}
-}
+} */

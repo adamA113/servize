@@ -19,32 +19,8 @@ import './Header.css'
 export default function Header() {
 
 	return (
-		<React.Fragment>
-			{/* <nav className="navbar navbar-expand-lg navbar-light fixed-top">
-				<div className="container">
-					<a className="navbar-brand" href="#">Creativo</a> <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" className="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button"><span className="navbar-toggler-icon"></span></button>
-					<div className="collapse navbar-collapse" id="navbarSupportedContent">
-						<ul className="navbar-nav ml-auto">
-							<li className="nav-item active">
-								<a className="nav-link" href="#">Home</a>
-							</li>
-							<li className="nav-item">
-								<a className="nav-link" href="#">About</a>
-							</li>
-							<li className="nav-item">
-								<a className="nav-link" href="#">Portfolio</a>
-							</li>
-							<li className="nav-item">
-								<a className="nav-link" href="#">Services</a>
-							</li>
-							<li className="nav-item">
-								<a className="nav-link" href="#">Contact</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</nav> */}
-			<div className="carousel slide" data-ride="carousel" id="carouselExampleIndicators">
+	
+			<div className="carousel slide newheader" data-ride="carousel" id="carouselExampleIndicators">
 				<ol className="carousel-indicators">
 					<li className="active" data-slide-to="0" data-target="#carouselExampleIndicators"></li>
 					<li data-slide-to="1" data-target="#carouselExampleIndicators"></li>
@@ -77,6 +53,6 @@ export default function Header() {
 					</div>
 				</div><a className="carousel-control-prev" data-slide="prev" href="#carouselExampleIndicators" role="button"><span aria-hidden="true" className="carousel-control-prev-icon"></span> <span className="sr-only">Previous</span></a> <a className="carousel-control-next" data-slide="next" href="#carouselExampleIndicators" role="button"><span aria-hidden="true" className="carousel-control-next-icon"></span> <span className="sr-only">Next</span></a>
 			</div>
-		</React.Fragment >
+
 	)
 }

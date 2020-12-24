@@ -1,8 +1,8 @@
 #login {
     position: relative;
     top: -850px;
+    left: 370px;
     animation: popup 1s ease forwards;
-    
 }
 
 #login-form {
@@ -17,8 +17,8 @@
 
 @keyframes popup {
     0%{opacity: 0}
-    70%{transform: translateY(950px)}
-    100%{transform: translateY(950px); opacity: 1}
+    70%{transform: translateY(850px)}
+    100%{transform: translateY(850px); opacity: 1}
     
 }
 

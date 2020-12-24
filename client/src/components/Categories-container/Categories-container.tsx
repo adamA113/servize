@@ -23,7 +23,17 @@ import Parquet from '../catagories/parquet.jpg';
 import Gypsum from '../catagories/jypsum.jpg';
 import Appliance from '../catagories/light.jpg';
 
-var catImages = [Electrican, Painting, Tiling, Plaster, Alumini, Carpenter, Satellite, Parquet, Gypsum, Appliance]
+var catImages = [{ catImg: Electrican, catName: "Electrican" },
+    { catImg: Painting, catName: "Painting"},
+    { catImg: Tiling, catName: "Tiling"},
+    { catImg: Plaster, catName: "Tiling"},
+    { catImg: Alumini, catName: "Alumini"},
+    { catImg: Carpenter, catName: "Carpenter"},
+    { catImg: Satellite, catName:"Satellite"},
+    { catImg: Parquet, catName:"Parquet"},
+    { catImg: Gypsum, catName:"Gypsum"},
+    { catImg: Appliance, catName:"Appliance"}
+]
 
 const axios = require('axios');
 const $ = require('jquery');
@@ -73,14 +83,14 @@ const Categories = (props: any) => {
     // if (userInStore !== undefined) {
     return (
         <Carousel responsive={responsive}>
-            
-                {catImages.map((user: any, index: any) =>
-                    <CategoriesCard
-                        key={index}
-                        user={user}
-                    />
-                )}
-           
+
+            {catImages.map((user: any, index: any) =>
+                <CategoriesCard
+                    key={index}
+                    user={user}
+                />
+            )}
+
         </Carousel >
     )
     // }
