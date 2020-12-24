@@ -12,6 +12,7 @@ import Schedules from '../calender/CalEvent'
 // import Context from '../utils/context';
 import Schedule from '../calender/Schedule';
 import './ProviderView.css'
+import BookingList from '../booking/BookingList'
 
 import UploadImg from '../profiles/uploadImg';
 
@@ -213,21 +214,13 @@ export default function ProviderProf() {
                                     </div>
                                 </div>
                             </div>
-                            {/* <div className="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                            <div className="row">
-                                <Schedule />
+                            <div>
+                                <BookingList/>
                             </div>
-                            <div className="row">
-                                <div className="col-md-12">
-                                    <label>Your Bio</label><br />
-                                    <p>Your detail description</p>
-
-                                </div>
-                            </div>
-                        </div> */}
+                        </div> 
                         </div>
                     </div>
-                </div>
+                {/* </div> */}
             </form>
         </div >
     )
