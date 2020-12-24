@@ -1,4 +1,4 @@
-.card {
+/* .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   border-radius: 5px;
@@ -22,4 +22,48 @@ img {
   border-radius: 5px 5px 0 0;
   margin: 0 auto;
 } 
+ */
+ body {
+  min-height: 100vh;
+  background: #fafafa;
+  
+}
+
+
+.social-link {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  border-radius: 50%;
+  transition: all 0.3s;
+  font-size: 0.9rem;
+}
+
+.social-link:hover, .social-link:focus {
+  background: #ddd;
+  text-decoration: none;
+  color: #555;
+}
+
+.progress {
+  height: 10px;
+}
+
+
+
+#card:hover, #card:focus {
+  background: #ddd;
+  text-decoration: none;
+  color: #555;
+}
+
+#img:hover, #img:focus {
+  opacity: 0.6;
+
+}
+
 
