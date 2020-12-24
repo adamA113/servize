@@ -40,8 +40,8 @@ function App() {
     <BrowserRouter>
       <div className="App">
         {/* < Map /> */}
-        {/* <Navbar /> */}
-        <Test/>
+        <Navbar />
+        {/* <Test/> */}
         {/* <Catagories /> */}
         {/* <ProviderProf /> */}
         {/* <ProviderView /> */}
@@ -54,13 +54,13 @@ function App() {
         {/* <Search /> */}
         {/* <Calendar /> */}
         {/* <Schedule /> */}
-        {/* <Header />
-        <ServiceProvider/> */}
+        {/* <Header /> */}
+        {/* <ServiceProvider/> */}
         {/* <Booking/> */}
 
         <Switch>
 
-          {/* <Route exact path="/" component={HomePage} /> */}
+          <Route exact path="/" component={HomePage} />
           <Route exact path="/usertype" component={Usertype} />
           {/* <Route exact path="/" component={Main} /> */}
           <Route path="/prov/signup" component={ProviderSignup} />
