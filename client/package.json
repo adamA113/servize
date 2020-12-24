@@ -37,6 +37,7 @@
     "i18next-http-backend": "^1.0.21",
     "jquery": "^3.5.1",
     "mdbreact": "^5.0.0",
+    "pure-react-carousel": "^1.27.6",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.0",
     "react-bootstrap-date-time-picker": "0.0.3",
