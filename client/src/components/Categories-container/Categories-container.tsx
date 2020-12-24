@@ -4,19 +4,50 @@ import { useSelector, useDispatch } from 'react-redux';
 import { signUp } from '../../actions/Users/usersActions';
 import { connect } from 'react-redux'
 import CategoriesCard from "./Categories-card";
-import { State} from '../../reducers/Users/usersReducer'
-
+import { State } from '../../reducers/Users/usersReducer'
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 // import '@fortawesome/fontawesome-free/css/all.min.css';
 // import 'bootstrap-css-only/css/bootstrap.min.css';
 // import 'mdbreact/dist/css/mdb.css';
 import './Categories-card.css';
+
+import Electrican from '../catagories/elect1.jpg';
+import Painting from '../catagories/paint.jpg';
+import Tiling from '../catagories/tiling.jpg';
+import Plaster from '../catagories/plaster.jpg';
+import Alumini from '../catagories/alamunuim.jpg';
+import Carpenter from '../catagories/carpenter.jpg';
+import Satellite from '../catagories/satalite.jpg';
+import Parquet from '../catagories/parquet.jpg';
+import Gypsum from '../catagories/jypsum.jpg';
+import Appliance from '../catagories/light.jpg';
+
+var catImages = [Electrican, Painting, Tiling, Plaster, Alumini, Carpenter, Satellite, Parquet, Gypsum, Appliance]
+
 const axios = require('axios');
 const $ = require('jquery');
 
+const Categories = (props: any) => {
+    const responsive = {
+        desktop: {
+            breakpoint: { max: 3000, min: 1024 },
+            items: 5,
+            slidesToSlide: 2 // optional, default to 1.
+        },
+        tablet: {
+            breakpoint: { max: 1024, min: 464 },
+            items: 2,
+            slidesToSlide: 2 // optional, default to 1.
+        },
+        mobile: {
+            breakpoint: { max: 464, min: 0 },
+            items: 1,
+            slidesToSlide: 1 // optional, default to 1.
+        }
+    }
 
-
-const Categories = (props:any) => {
-    const[cat, setCat] = useState([]);
+    const [cat, setCat] = useState([]);
     const [test, setTest] = useState([]);
     // const userInStore = useSelector((state: any) => state.user);
     // const dispatch = useDispatch();
@@ -24,32 +55,34 @@ const Categories = (props:any) => {
     // console.log("store ===> ", userInStore)
     console.log("store ===> ", cat)
 
-    useEffect(() =>{
-        axios.get(`http://localhost:8000/category/`)
+    // useEffect(() =>{
+    //     axios.get(`http://localhost:8000/category/`)
 
-            .then((result: any) => {
-                // console.log("axios", result.data)
-                // dispatch(store(result.data))
-                setCat(result.data)
+    //         .then((result: any) => {
+    //             // console.log("axios", result.data)
+    //             // dispatch(store(result.data))
+    //             setCat(result.data)
 
-            })
-            .catch((err: any) => {
-                console.error("err===== =>", err);
-            })
-    },[test])
-    
+    //         })
+    //         .catch((err: any) => {
+    //             console.error("err===== =>", err);
+    //         })
+    // },[test])
+
 
     // if (userInStore !== undefined) {
-        return (
-            <div className="list">
-                {cat.map((user: any, index: any) =>
+    return (
+        <Carousel responsive={responsive}>
+            
+                {catImages.map((user: any, index: any) =>
                     <CategoriesCard
                         key={index}
                         user={user}
                     />
                 )}
-            </div>
-        )
+           
+        </Carousel >
+    )
     // }
     // else {
     //     return (

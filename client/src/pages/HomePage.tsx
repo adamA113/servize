@@ -6,7 +6,6 @@ import HowWorks from '../components/HowWorks/HowWorks'
 require('dotenv').config();
 
 const HomePage = () => {
-    console.log("adsadasd",process.env.API)
     return ( 
         <div>
             <Main />

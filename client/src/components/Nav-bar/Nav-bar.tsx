@@ -63,7 +63,7 @@ const Navbar = () => {
 
     return (
         <header id="nav-bar">
-            <nav>
+            <nav className="fixed-top">
                 <span className="menu-icon" onClick={openClick}>
                     <i className="fa fa-bars fa-2x"></i>
                 </span>
@@ -81,12 +81,12 @@ const Navbar = () => {
                 <span className="menu">
                     <ul>
                         <li className="pc-view"><a href="#">{t("how_it_works")}</a></li>
-                        <li className="pc-view"><a href="#">Browse Jobs</a></li>
+                        <li className="pc-view"><a href="#">{t("Browse_Jobs")}</a></li>
                         <li className="lang-dropdown">
                             {/* <button onClick={selectLang} className="lang-dropbtn">Languages</button> */}
                             < div id="lang-Dropdown pc-view" className="lang-dropdown-content"> 
-                                <a className="pc-view" onClick={() => i18n.changeLanguage("en")}> English</a>
-                                <a className="pc-view" onClick={() => i18n.changeLanguage("ar")}>عربي</a>
+                                <span className="pc-view-lang" onClick={() => i18n.changeLanguage("en")}> English</span>
+                                <span className="pc-view-lang" onClick={() => i18n.changeLanguage("ar")}>عربي</span>
                             </div>
 
                         </li>

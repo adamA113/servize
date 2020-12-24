@@ -50,6 +50,9 @@
 /*side nav*/
 
 /*******/
+#nav-bar{
+      position: fixed;
+}
 .logo {
       text-decoration: none;
       line-height: 50px;
@@ -84,10 +87,14 @@ nav ul {
 }
 
 nav.black ul {
-      background: rgb(4, 98, 240);
+      background: #202020;
 }
 
 nav.black a {
+      color: rgb(255, 255, 255);
+}
+
+nav.black .pc-view-lang {
       color: rgb(255, 255, 255);
 }
 
@@ -101,6 +108,12 @@ nav ul li {
 
 .menu a {
       text-decoration: none;
+      color: rgb(0, 0, 0);
+      font-size: 16px;
+}
+
+
+.menu .pc-view-lang {
       color: rgb(0, 0, 0);
       font-size: 16px;
 }

@@ -6,7 +6,7 @@
 }
 
 #login-form {
-    /* position: absolute;; */
+  /* position: absolute; */
   width: 400px;
   margin: 10px auto;
   padding: 30px;
@@ -17,8 +17,8 @@
 
 @keyframes popup {
     0%{opacity: 0}
-    70%{transform: translateY(850px)}
-    100%{transform: translateY(850px); opacity: 1}
+    70%{transform: translateY(950px)}
+    100%{transform: translateY(950px); opacity: 1}
     
 }
 
@@ -39,13 +39,13 @@
 
 #login-form label {
   display: block;
-  margin: 20px 0 10px;
+  margin: 10px 0 10px;
 }
 
 #login-form .btn-login {
   margin-top: 30px;
   border-radius: 36px;
-  background: rgb(255, 56, 92);
+  background: #FFDF6C;
   border: 0;
   color: #fff;
   text-transform: uppercase;

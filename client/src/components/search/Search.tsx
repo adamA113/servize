@@ -33,7 +33,7 @@ const Search = () => {
 
                 .then((result: any) => {
                     console.log("axios", result.data)
-                    dispatch(getProv(result.data[0].name, result.data[0].serviceProviders))  
+                    // dispatch(getProv(result.data[0].name, result.data[0].serviceProviders))  
                     // setResults(result.data)
                     // redirect to the provider page  path= '/provider'
 

@@ -40,9 +40,10 @@ function App() {
     <BrowserRouter>
       <div className="App">
         {/* < Map /> */}
-        {/* <Navbar /> */}
-        <Test/>
+        <Navbar />
+        {/* <Test/> */}
         {/* <Catagories /> */}
+        {/* <Categories /> */}
         {/* <ProviderProf /> */}
         {/* <ProviderView /> */}
         {/* <UserView /> */}
@@ -60,7 +61,7 @@ function App() {
 
         <Switch>
 
-          {/* <Route exact path="/" component={HomePage} /> */}
+          <Route exact path="/" component={HomePage} />
           <Route exact path="/usertype" component={Usertype} />
           {/* <Route exact path="/" component={Main} /> */}
           <Route path="/prov/signup" component={ProviderSignup} />
@@ -83,7 +84,7 @@ function App() {
 
         </Switch>
 
-        {/* <Footer /> */}
+        <Footer />
 
       </div>
     </BrowserRouter>

@@ -7,8 +7,6 @@ import './Categories-card.css';
 const axios = require('axios');
 const $ = require('jquery');
 
-
-
 const CategoriesCard = ({ user }: { user: any }) => {
     const userInStore = useSelector((state: any) => state.user);
     const dispatch = useDispatch();
@@ -28,28 +26,43 @@ const CategoriesCard = ({ user }: { user: any }) => {
         })
     }
     return (
-        <div className="card" style={{ display: "flex" }}>
-            <img src={user.catImage} alt="Avatar" />
-            <div className="container">
-                <   h4><b>{user.catName}</b></h4>
-                {/* <p>Architect Engineer</p> */}
 
-                <button onClick={handleClick}>
-                    <Link to="/provider">Learn More</Link>
-                </button>
 
-                {/* <SubCategories user={user.subCategories} /> */}
+        
+            <div className="card card-block">
+                <img src={user} />
+                <h5 className="card-title mt-3 mb-3">Electrican</h5>
+                {/* <p className="card-text">This is a company that builds websites, web apps and e-commerce solutions.</p> */}
             </div>
+    
 
-            {/* <div className="list">
-                {userInStore.subCategories.map((user: any, index: any) =>
-                    <SubCategories
-                        key={index}
-                        user={user}
-                    />
-                )}
-            </div> */}
-        </div>
+        // <div className="cat-container">
+        //     <div className="card-item">
+        //         <img className="cat-img" src={user} alt="Photo of sunset" />
+        //         <h5 className="card-title mt-3 mb-3">Electrican</h5>
+        //     </div>
+        // </div>
+
+        // <div className="cat-container">
+        //     <div className="card-item">
+        //         <img className="cat-img" src={Electrican} alt="Photo of sunset" />
+        //         <h5 className="card-title mt-3 mb-3">Electrican</h5>
+        //     </div>
+        // </div>
+
+        // <div className="card" style={{ display: "flex" }}>
+        //     <img src={user.catImage} alt="Avatar" />
+        //     <div className="container">
+        //         <   h4><b>{user.catName}</b></h4>
+        //         {/* <p>Architect Engineer</p> */}
+
+        //         <button onClick={handleClick}>
+        //             <Link to="/provider">Learn More</Link>
+        //         </button>
+
+        //         {/* <SubCategories user={user.subCategories} /> */}
+        //     </div>
+        // </div>
     )
 }
 
