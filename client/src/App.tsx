@@ -55,8 +55,8 @@ function App() {
         {/* <Search /> */}
         {/* <Calendar /> */}
         {/* <Schedule /> */}
-        {/* <Header />
-        <ServiceProvider/> */}
+        {/* <Header /> */}
+        {/* <ServiceProvider/> */}
         {/* <Booking/> */}
 
         <Switch>

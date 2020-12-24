@@ -7,7 +7,7 @@ class User(models.Model):
     role = models.CharField(max_length=10,default='user')
     image = models.CharField(max_length=256)
     phone =models.IntegerField(default=00000)
-   
+    
    
     def __str__(self):
         return self.user.name

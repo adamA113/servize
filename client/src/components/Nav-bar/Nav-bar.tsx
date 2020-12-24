@@ -35,11 +35,11 @@ const Navbar = () => {
     let token;
     try {
         const serializedState = localStorage.getItem("access_token");
-        console.log("token",serializedState);
+        console.log("token", serializedState);
         if (serializedState === null) {
             token = null;
         }
-         token = JSON.parse(serializedState);
+        token = JSON.parse(serializedState);
     }
     catch (e) {
         console.log(e);
@@ -74,7 +74,7 @@ const Navbar = () => {
                     <a href="#">Browse Jobs</a>
                     <a href="#">Contact</a>
                 </div>
-                
+
                 <a href="/" className="logo">
                     {t("app_name")}
                 </a>
@@ -84,29 +84,29 @@ const Navbar = () => {
                         <li className="pc-view"><a href="#">{t("Browse_Jobs")}</a></li>
                         <li className="lang-dropdown">
                             {/* <button onClick={selectLang} className="lang-dropbtn">Languages</button> */}
-                            < div id="lang-Dropdown pc-view" className="lang-dropdown-content"> 
+                            < div id="lang-Dropdown pc-view" className="lang-dropdown-content">
                                 <span className="pc-view-lang" onClick={() => i18n.changeLanguage("en")}> English</span>
                                 <span className="pc-view-lang" onClick={() => i18n.changeLanguage("ar")}>عربي</span>
                             </div>
 
                         </li>
                         {token === null ?
-                        <span>
-                            <li><Link to="/user/login">{t("log_in")}</Link></li>
-                            {/* <li><Link to="/user/signup">{t("join")}</Link></li> */}
-                            <li onClick={handleClick}> <a href="#">{t("join")}</a></li>
-                        </span>
-                        :
-                        <span>
-                            <li><a href="profiles/user">Profile</a></li>
-                            <li>
-                                <Button onClick={() => { localStorage.clear(); window.location.href = "/"; }} id="logout">
-                                    Logout
+                            <span>
+                                <li><Link to="/user/login">{t("log_in")}</Link></li>
+                                {/* <li><Link to="/user/signup">{t("join")}</Link></li> */}
+                                <li onClick={handleClick}> <a href="#">{t("join")}</a></li>
+                            </span>
+                            :
+                            <span>
+                                <li><a href="profiles/user">Profile</a></li>
+                                <li>
+                                    <Button onClick={() => { localStorage.clear(); window.location.href = "/"; }} id="logout">
+                                        Logout
                             </Button>
-                            </li>
-                        </span>}
+                                </li>
+                            </span>}
 
-                        
+
                     </ul>
 
                     {/* <div className="select">
