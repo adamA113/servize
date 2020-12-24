@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import ProviderCard from "./Provider-card";
 
-const ProviderContainer = ({ results, city, category }: any) => {
+const ProviderContainer = () => {
     const dispatch = useDispatch();
     const userInStore = useSelector((state: any) => state.providers.providers)
 

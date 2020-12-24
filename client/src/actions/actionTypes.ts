@@ -24,15 +24,10 @@ export interface Userdata {
 
 }
 
-export interface Provider {
+export interface Providers {
     type: typeof GET_PROV,
-    payload: AllProv,
+    payload: AllProv
 }
-
-// export type Category={
-//     catName:string,
-//     catImage:string,   
-// }
 
 export type UserIerface = {
     username: string,
@@ -41,20 +36,17 @@ export type UserIerface = {
     id?: number
 }
 
-export type ProvIerface = {
-    city: string,
-    providers: object,
+export type ProvidersInt = {
+    category: string,
+    providers: any[]
 }
+
 
 
 export type User = UserIerface | null | string
 
-export type AllProv = ProvIerface | null | any[] 
-
-// export type Value = Category | null |string | any[] | boolean
-
-// export type Value = boolean
+export type AllProv = ProvidersInt | null | object
 
 export type DispatchUserTypes = Userstore | Userdata | UserRole | Userlogin;
 
-export type DispatchProvTypes = Provider ;
+export type DispatchProvTypes = Providers ;

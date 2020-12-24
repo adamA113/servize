@@ -1,0 +1,37 @@
+/* body {
+    background: linear-gradient(to right, #c04848, #480048);
+    min-height: 100vh
+} */
+#list:hover,#list:focus{
+    opacity: 0.6;
+}
+#main {
+    background-color: black;
+    height: 80px;
+    width: 493px;
+    position: relative;
+    left: 138px;
+   
+  text-decoration: none;
+  
+  
+    
+
+}
+#title{
+    color: #ffdf6c;
+    font-weight: bold;
+    position: relative;
+    bottom: 3px;
+}
+
+
+
+.text-gray {
+    color: #aaa
+}
+
+img {
+    height: 170px;
+    width: 140px
+}

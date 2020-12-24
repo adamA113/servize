@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { signUp } from '../../actions/Users/usersActions';
+import { getProv } from '../../actions/Providers/providersActions';
 import SubCategories from "./subCategories";
 import './Categories-card.css';
 const axios = require('axios');
@@ -14,11 +14,13 @@ const CategoriesCard = ({ user }: { user: any }) => {
     const dispatch = useDispatch();
     // console.log("hi", user)
     const handleClick = () => {
-        axios.get(`http://localhost:8000/category/`)
+        axios.post(`http://localhost:8000/category/providers/`, {
+            catName: user.catName,
+        })
 
         .then((result: any) => {
-            console.log("axios", result.data)
-            // dispatch(store(result.data))
+            // console.log("axios", result.data[0].providers)
+            dispatch(getProv(result.data[0].catName, result.data[0].providers ))
 
         })
         .catch((err: any) => {
