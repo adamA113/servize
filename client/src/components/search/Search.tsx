@@ -39,48 +39,59 @@ const Search = () => {
                     // setResults(result.data)
                     // redirect to the provider page  path= '/provider'
 
-                })
-                .catch((err: any) => {
-                    console.error("err===== =>", err);
-                })
+            })
+            .catch((err: any) => {
+                console.error("err===== =>", err);
+            })
         // }
         // console.log("========", result)
         // const handleChange = () => {
 
-        }
-        console.log(category)
-
-        return (
-
-            <div>
-                <input type="text" placeholder="search.."></input>
-
-                <div className="cat dropdown">
-                    {/* <button className="dropbtn" onClick={()=>{setCat(!cat)}}>Category</button> */}
-                    <select className="dropdown-cat" onChange={(e) => { setCategory(e.target.value) }}>
-                        <option>Electrician</option>
-                        <option>Plumber</option>
-                        <option>Carpenter</option>
-                    </select>
-                </div>
-
-                <div className="city dropdown">
-                    {/* <button className="dropbtn" onClick={()=>{setCity(!city)}}>City</button> */}
-                    <select className="dropdown-city" onChange={(e) => { setCity(e.target.value) }}>
-                        <option>Ramallah</option>
-                        <option>Nablus</option>
-                        <option>Hebron</option>
-                        <option>Jenin</option>
-                        <option>Tulkarem</option>
-                        <option>Jericho</option>
-
-
-                    </select>
-                </div>
-                <button  className = "btn-search" onClick={handleClick}>Submit</button>
-                {/* <ProviderContainer results={results} city={city} category={category} /> */}
-            </div>
-        )
     }
+    console.log(category)
 
-    export default Search;
+    return (
+        <section className="search-sec">
+            <div className="container">
+                <form action="#" >
+                    <div className="row">
+                        <div className="col-lg-12">
+                            <div className="row">
+                                <div className="col-lg-3 col-md-3 col-sm-12 p-0"></div>
+                                <div>
+                                    {/* <input type="text" placeholder="search.."></input> */}
+
+                                    <div className="cat dropdown">
+                                        {/* <button className="dropbtn" onClick={()=>{setCat(!cat)}}>Category</button> */}
+                                        <select className="dropdown-cat" onChange={(e) => { setCategory(e.target.value) }}>
+                                            <option>Electrician</option>
+                                            <option>Plumber</option>
+                                            <option>Carpenter</option>
+                                        </select>
+                                    </div>
+
+                                    <div className="city dropdown">
+                                        {/* <button className="dropbtn" onClick={()=>{setCity(!city)}}>City</button> */}
+                                        <select className="dropdown-city" onChange={(e) => { setCity(e.target.value) }}>
+                                            <option>Ramallah</option>
+                                            <option>Nablus</option>
+                                            <option>Hebron</option>
+                                            <option>Jenin</option>
+                                            <option>Tulkarem</option>
+                                            <option>Jericho</option>
+                                        </select>
+                                    </div>
+                                    <button className="btn-search" onClick={handleClick}>Search</button>
+                                    {/* <ProviderContainer results={results} city={city} category={category} /> */}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    )
+}
+
+export default Search;
+

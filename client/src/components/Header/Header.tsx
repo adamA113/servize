@@ -18,7 +18,7 @@ export default function Header() {
 
 	return (
 		<React.Fragment>
-			<nav className="navbar navbar-expand-lg navbar-light fixed-top">
+			{/* <nav className="navbar navbar-expand-lg navbar-light fixed-top">
 				<div className="container">
 					<a className="navbar-brand" href="#">Creativo</a> <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" className="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button"><span className="navbar-toggler-icon"></span></button>
 					<div className="collapse navbar-collapse" id="navbarSupportedContent">
@@ -41,7 +41,7 @@ export default function Header() {
 						</ul>
 					</div>
 				</div>
-			</nav>
+			</nav> */}
 			<div className="carousel slide" data-ride="carousel" id="carouselExampleIndicators">
 				<ol className="carousel-indicators">
 					<li className="active" data-slide-to="0" data-target="#carouselExampleIndicators"></li>
@@ -52,8 +52,8 @@ export default function Header() {
 					<div className="carousel-item active">
 						<img alt="First slide" className="d-block w-100" src="https://t4.ftcdn.net/jpg/03/19/42/81/240_F_319428113_xtWoSqCOX9gEQtdJpel4QukCLEg5TJEH.jpg" />
 						<div className="carousel-caption d-none d-md-block">
-							<h5 className="animated bounceInRight" style={{ animationDelay: "1s" }} >Web Development</h5>
-							<p className="animated bounceInLeft" style={{ animationDelay: "2s" }}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, nulla, tempore. Deserunt excepturi quas vero.</p>
+							<h5 className="animated bounceInRight" style={{ animationDelay: "1s" }} >HOME SERVICES ON-DEMAND</h5>
+							<p className="animated bounceInLeft" style={{ animationDelay: "2s" }}>We're an open book, easily view all the reviews and stats of the Pro who's on the way to fix your problem.</p>
 							<p className="animated bounceInRight" style={{ animationDelay: "3s" }}><a href="#">More Info</a></p>
 						</div>
 					</div>

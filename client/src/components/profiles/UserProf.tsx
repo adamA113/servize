@@ -61,7 +61,7 @@ export default function UserProf() {
                                                 <div className="file btn btn-primary">
                                                     Change Photo
                                                  <input type="file" name="file" />
-                                                </div>
+                                                </div> 
                                             </div>
                                         </div>
                                         <h6 className="f-w-600">{userData.name}</h6><br></br>

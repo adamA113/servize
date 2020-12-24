@@ -4,114 +4,107 @@ import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
 import './Footer.css';
 
+import InstagramIcon from '@material-ui/icons/Instagram';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import TwitterIcon from '@material-ui/icons/Twitter';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+
 const Footer = () => {
     return (
-        <footer id="footer" className="page-footer font-small mdb-color pt-4">
+        <div>
+            <hr className="hr-or" />
+            <span className="span-or">or</span>
+            <hr className="hr-or" />
+            <hr className="hr-or" />
+            <footer className="nb-footer">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-sm-12">
+                            <div className="about">
+                                <img src="images/logo.png" className="img-responsive center-block" alt="" />
+                                <p>Bootstrap Footer example snippets with CSS, Javascript and HTML. Code example of bootstrap-3 footer using HTML, Javascript, jQuery, and CSS. 5 Beautiful and Responsive Footer Templates. Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS.</p>
 
-            <div className="container text-center text-md-left">
+                                <div className="social-media">
+                                    <ul className="list-inline">
+                                        <li>
+                                            <a href="https://www.facebook.com/"><FacebookIcon stroke-width={1} /></a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.instagram.com/"><InstagramIcon stroke-width={1} /></a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.twitter.com/"><TwitterIcon stroke-width={1} /></a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.linkedin.com/"><LinkedInIcon stroke-width={1} /></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
 
-                <div className="row text-center text-md-left mt-3 pb-3">
+                        <div className="col-md-3 col-sm-6">
+                            <div className="footer-info-single">
+                                <h2 className="title">Help Center</h2>
+                                <ul className="list-unstyled">
+                                    <li><a href="http://www.nextbootstrap.com/" title=""><i className="fa fa-angle-double-right"></i> How to Pay</a></li>
+                                    <li><a href="http://www.nextbootstrap.com/" title=""><i className="fa fa-angle-double-right"></i> FAQ's</a></li>
+                                    <li><a href="http://www.nextbootstrap.com/" title=""><i className="fa fa-angle-double-right"></i> Sitemap</a></li>
+                                    <li><a href="http://www.nextbootstrap.com/" title=""><i className="fa fa-angle-double-right"></i> Delivery Info</a></li>
+                                </ul>
+                            </div>
+                        </div>
 
-                    <div className="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-                        <h6 className="text-uppercase mb-4 font-weight-bold">Company name</h6>
-                        <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
-                        consecteturadipisicing elit.</p>
+                        <div className="col-md-3 col-sm-6">
+                            <div className="footer-info-single">
+                                <h2 className="title">Customer information</h2>
+                                <ul className="list-unstyled">
+                                    <li><a href="http://www.nextbootstrap.com/" title=""><i className="fa fa-angle-double-right"></i> About Us</a></li>
+                                    <li><a href="http://www.nextbootstrap.com/" title=""><i className="fa fa-angle-double-right"></i> FAQ's</a></li>
+                                    <li><a href="http://www.nextbootstrap.com/" title=""><i className="fa fa-angle-double-right"></i> Sell Your Items</a></li>
+                                    <li><a href="http://www.nextbootstrap.com/" title=""><i className="fa fa-angle-double-right"></i> Contact Us</a></li>
+                                    <li><a href="http://www.nextbootstrap.com/" title=""><i className="fa fa-angle-double-right"></i> RSS</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div className="col-md-3 col-sm-6">
+                            <div className="footer-info-single">
+                                <h2 className="title">Security & privacy</h2>
+                                <ul className="list-unstyled">
+                                    <li><a href="http://www.nextbootstrap.com/" title=""><i className="fa fa-angle-double-right"></i> Terms Of Use</a></li>
+                                    <li><a href="http://www.nextbootstrap.com/" title=""><i className="fa fa-angle-double-right"></i> Privacy Policy</a></li>
+                                    <li><a href="http://www.nextbootstrap.com/" title=""><i className="fa fa-angle-double-right"></i> Return / Refund Policy</a></li>
+                                    <li><a href="http://www.nextbootstrap.com/" title=""><i className="fa fa-angle-double-right"></i> Store Locations</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div className="col-md-3 col-sm-6">
+                            <div className="footer-info-single">
+                                <h2 className="title">Payment</h2>
+                                <p>Sample HTML page with Twitter's Bootstrap. Code example of Easy Sticky Footer using HTML, Javascript, jQuery, and CSS. This bootstrap tutorial covers all the major elements of responsive</p>
+
+                            </div>
+                        </div>
                     </div>
-
-                    <hr className="w-100 clearfix d-md-none"/>
-
-                    <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                        <h6 className="text-uppercase mb-4 font-weight-bold">Categories</h6>
-                        <p>
-                            <a href="#!">Cat</a>
-                        </p>
-                        <p>
-                            <a href="#!">Cat</a>
-                        </p>
-                        <p>
-                            <a href="#!">Cat</a>
-                        </p>
-                        <p>
-                            <a href="#!">Cat</a>
-                        </p>
-                    </div>
-
-                    <hr className="w-100 clearfix d-md-none"/>
-
-                    <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
-                        <h6 className="text-uppercase mb-4 font-weight-bold">About</h6>
-                        <p>
-                            <a href="#!">Terms of Service</a>
-                        </p>
-                        <p>
-                            <a href="#!">Privacy Policy</a>
-                        </p>
-                        <p>
-                            <a href="#!">Partnerships</a>
-                        </p>
-                        <p>
-                            <a href="#!">Help</a>
-                        </p>
-                    </div>
-
-                    <hr className="w-100 clearfix d-md-none"/>
-
-                    <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
-                        <h6 className="text-uppercase mb-4 font-weight-bold">Apps</h6>
-                        <p>
-                            <i className="fas fa-home mr-3"></i> App store</p>
-                        
-                        <p>
-                            <i className="fas fa-print mr-3"></i> Google Play</p>
-                    </div>
-
                 </div>
 
-                <hr/>
-
-                <div className="row d-flex align-items-center">
-
-                    <div className="col-md-7 col-lg-8">
-
-                        <p className="text-center text-md-left">© 2020 Copyright:
-                            <a href="https://mdbootstrap.com/">
-                                <strong> servize.com</strong>
-                            </a>
-                        </p>
-
-                    </div>
-
-                    <div className="col-md-5 col-lg-4 ml-lg-0">
-
-                        <div className="text-center text-md-right">
-                            <ul className="list-unstyled list-inline">
-                                <li className="list-inline-item">
-                                    <a className="btn-floating btn-sm rgba-white-slight mx-1">
-                                        <i className="fab fa-facebook-f"></i>
-                                    </a>
-                                </li>
-                                <li className="list-inline-item">
-                                    <a className="btn-floating btn-sm rgba-white-slight mx-1">
-                                        <i className="fab fa-twitter"></i>
-                                    </a>
-                                </li>
-                                <li className="list-inline-item">
-                                    <a className="btn-floating btn-sm rgba-white-slight mx-1">
-                                        <i className="fab fa-google-plus-g"></i>
-                                    </a>
-                                </li>
-                                <li className="list-inline-item">
-                                    <a className="btn-floating btn-sm rgba-white-slight mx-1">
-                                        <i className="fab fa-linkedin-in"></i>
-                                    </a>
-                                </li>
-                            </ul>
+                <section className="copyright">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-sm-6">
+                                <p>Copyright © 2020. SERVIZ.</p>
+                            </div>
+                            <div className="col-sm-6"></div>
                         </div>
-                    </div>                 
-                </div>               
-            </div>             
-        </footer>
+                    </div>
+                </section>
+            </footer>
+        </div>
+
     )
 }
 
 export default Footer;
+
