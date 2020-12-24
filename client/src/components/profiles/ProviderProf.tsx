@@ -21,6 +21,19 @@ import { useSelector, useDispatch } from 'react-redux';
 const axios = require('axios');
 const $ = require('jquery');
 
+interface servData {
+    picture: string,
+    name: string,
+    email: string,
+    phone: string
+}
+const data: servData = {
+    picture: '',
+    name: '',
+    email: '',
+    phone: ''
+};
+
 export default function ProviderProf() {
     //for upload image 
 
@@ -31,13 +44,15 @@ export default function ProviderProf() {
     // }
 
     const [test, setTest] = useState([]);
+    const [servData, setservData] = useState(data);
 
     useEffect(() => {
         axios.post(`http://localhost:8000/serviceprovider/servProv/`, { provider: "2" })
 
             .then((result: any) => {
-                console.log("axios", result.data)
+                console.log("axios", result.data[0])
                 // dispatch(store(result.data))
+                setservData({ picture: result.data[0].picture, name: result.data[0].name, email: result.data[0].email, phone: result.data[0].phone });
 
             })
             .catch((err: any) => {
@@ -84,13 +99,13 @@ export default function ProviderProf() {
                 <div className="row">
                     <div className="col-md-4">
                         <div className="profile-img">
-                            <br></br><img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" className="avatar img-circle img-thumbnail" alt="avatar" />
+                            <br></br><img src={servData.picture} className="avatar img-circle img-thumbnail" alt="avatar" />
                             <div className="file btn btn-lg btn-primary">
                                 Change Photo
                                 <input type="file" name="file" />
                             </div>
                             <h5>
-                                Service Provider Name
+                                {servData.name}
                             </h5>
                         </div>
 

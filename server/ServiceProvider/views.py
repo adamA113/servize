@@ -25,7 +25,7 @@ class ImageList(generics.ListCreateAPIView):
 
 @api_view(['POST'])
 def servProv(request):
-    servProvider = ServiceProvider.objects.all().filter(email=request.data['email'])
+    servProvider = ServiceProvider.objects.all().filter(provider=request.data['provider'])
     seralizer = ServiceProviderSerializer(servProvider,many=True)
 
     return Response (seralizer.data)

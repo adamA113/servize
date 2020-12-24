@@ -6,7 +6,7 @@ from django.views.generic import TemplateView
 urlpatterns = [
     
     path('admin/', admin.site.urls),
-    re_path(r'^.*', TemplateView.as_view(template_name='index.html')),
+    # re_path(r'^.*', TemplateView.as_view(template_name='index.html')),
     path('category/',include('Category.urls')),
     path('location/',include('Location.urls')),
     path('reviews/',include('Reviews.urls')),

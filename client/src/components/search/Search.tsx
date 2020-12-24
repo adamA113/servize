@@ -25,17 +25,19 @@ const Search = () => {
     //     }]);
 
     const handleClick = async () => {
-        await axios.post(`http://localhost:8000/location/loc/`,      //url for sending the request ?
-            {
-                name: city,
-                // category: category
-            })
+        console.log('aaaaaaaaaaaaaaaaaaaaa',city)
 
-            .then((result: any) => {
-                console.log("axios", result.data)
-                dispatch(getProv(result.data[0].name, result.data[0].serviceProviders))
-                // setResults(result.data)
-                // redirect to the provider page  path= '/provider'
+            await axios.post(`http://localhost:8000/location/loc/`,      //url for sending the request ?
+                {
+                    name: city,
+                    // category: category
+                })
+
+                .then((result: any) => {
+                    console.log("axios", result.data)
+                    // dispatch(getProv(result.data[0].name, result.data[0].serviceProviders))  
+                    // setResults(result.data)
+                    // redirect to the provider page  path= '/provider'
 
             })
             .catch((err: any) => {
