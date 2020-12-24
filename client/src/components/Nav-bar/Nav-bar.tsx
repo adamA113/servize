@@ -30,16 +30,16 @@ const Navbar = () => {
     const { t, i18n } = useTranslation();
     const userInStore = useSelector((state: any) => state.user);
     const dispatch = useDispatch();
-    // console.log("store ===> ", userInStore)
+    console.log("store ===> ", userInStore)
     // console.log("store ===> ", userInStore)
     let token;
     try {
         const serializedState = localStorage.getItem("access_token");
-        console.log("token",serializedState);
+        console.log("token", serializedState);
         if (serializedState === null) {
             token = null;
         }
-         token = JSON.parse(serializedState);
+        token = JSON.parse(serializedState);
     }
     catch (e) {
         console.log(e);
@@ -60,6 +60,55 @@ const Navbar = () => {
         document.getElementById("mySidenav").style.width = "0";
 
     }
+    const checkUser = async () => {
+        await axios.post(`http://localhost:8000/user/specUser/`,
+            {
+                pk :userInStore.user.id
+            })
+
+            .then(async (result: any) => {
+                console.log('user',result.data)
+                console.log("post", result.data[0].role)
+                if(result.data[0].role==='user'){
+                    window.location.href = "/profiles/user"
+                }
+                // let res = await axios({
+                //     url: 'http://localhost:8000/auth/users/me/',
+                //     method: 'get',
+                //     // timeout: 8000,
+                //     headers: {
+                //         'Authorization': 'JWT ' + access,
+                //         'Content-Type': 'application/json',
+                //     }
+                // })
+                // if (res.status == 200) {
+                //     // test for status you want, etc
+                //     console.log("get", res)
+                //     localStorage.setItem("access_token", access);
+                //     localStorage.setItem("refresh_token", refresh);
+                //     dispatch(logIn(res.data.name, res.data.email, res.data.id))
+                //     window.location.href = "/"
+                // }
+
+            })
+            .catch(async(result: any)  => {
+                
+                console.log("nononot")
+                await axios.post(`http://localhost:8000/serviceprovider/servProv/`,
+                {
+                    provider :userInStore.user.id
+                })
+                .then(async (result: any) => {
+                    console.log('provider',result.data)
+                    console.log("post", result.data[0].role)
+                    if(result.data[0].role==='ServiceProvider'){
+                        window.location.href = "/profiles/provider"
+                    }
+                })
+               
+            })
+
+    }
 
     return (
         <header id="nav-bar">
@@ -74,7 +123,7 @@ const Navbar = () => {
                     <a href="#">Browse Jobs</a>
                     <a href="#">Contact</a>
                 </div>
-                
+
                 <a href="/" className="logo">
                     {t("app_name")}
                 </a>
@@ -84,29 +133,29 @@ const Navbar = () => {
                         <li className="pc-view"><a href="#">Browse Jobs</a></li>
                         <li className="lang-dropdown">
                             {/* <button onClick={selectLang} className="lang-dropbtn">Languages</button> */}
-                            < div id="lang-Dropdown pc-view" className="lang-dropdown-content"> 
+                            < div id="lang-Dropdown pc-view" className="lang-dropdown-content">
                                 <a className="pc-view" onClick={() => i18n.changeLanguage("en")}> English</a>
                                 <a className="pc-view" onClick={() => i18n.changeLanguage("ar")}>عربي</a>
                             </div>
 
                         </li>
                         {token === null ?
-                        <span>
-                            <li><Link to="/user/login">{t("log_in")}</Link></li>
-                            {/* <li><Link to="/user/signup">{t("join")}</Link></li> */}
-                            <li onClick={handleClick}> <a href="#">{t("join")}</a></li>
-                        </span>
-                        :
-                        <span>
-                            <li><a href="profiles/user">Profile</a></li>
-                            <li>
-                                <Button onClick={() => { localStorage.clear(); window.location.href = "/"; }} id="logout">
-                                    Logout
+                            <span>
+                                <li><Link to="/user/login">{t("log_in")}</Link></li>
+                                {/* <li><Link to="/user/signup">{t("join")}</Link></li> */}
+                                <li onClick={handleClick}> <a href="#">{t("join")}</a></li>
+                            </span>
+                            :
+                            <span>
+                                <li><a onClick={checkUser}>Profile</a></li>
+                                <li>
+                                    <Button onClick={() => { localStorage.clear(); window.location.href = "/"; }} id="logout">
+                                        Logout
                             </Button>
-                            </li>
-                        </span>}
+                                </li>
+                            </span>}
 
-                        
+
                     </ul>
 
                     {/* <div className="select">

@@ -12,18 +12,33 @@ import { useSelector, useDispatch } from 'react-redux';
 const axios = require('axios');
 const $ = require('jquery');
 
-
+interface userData {
+    image:string,
+    name:string,
+    email:string,
+    phone:string
+}
+const data:userData={
+    image:'',
+    name:'',
+    email:'',
+    phone:''
+};
 export default function UserProf() {
+    const userInStore = useSelector((state: any) => state.user);
+    const dispatch = useDispatch();
+    console.log("store ===> ", userInStore)
 
     const [test, setTest] = useState([]);
-
+    const [userData, setuserData] = useState(data);
+    
     useEffect(() => {
-        axios.post(`http://localhost:8000/user/`, { user: "2" })
+        axios.post(`http://localhost:8000/user/specUser/`, { pk: userInStore.user.id })
 
             .then((result: any) => {
-                console.log("axios", result.data)
+                console.log("axios", result.data[0])
                 // dispatch(store(result.data))
-
+                setuserData( {image:result.data[0].image,name:result.data[0].name,email:result.data[0].email,phone:result.data[0].phone});
             })
             .catch((err: any) => {
                 console.error("err===== =>", err);
@@ -42,14 +57,14 @@ export default function UserProf() {
                                     <div className="card-block text-center text-white">
                                         <div className="m-b-25">
                                             <div className="profile-img">
-                                                <br></br><img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" className="img-radius" alt="User-Profile-Image" />
+                                                <br></br><img src={userData.image} className="img-radius" alt="User-Profile-Image" />
                                                 <div className="file btn btn-primary">
                                                     Change Photo
                                                  <input type="file" name="file" />
                                                 </div>
                                             </div>
                                         </div>
-                                        <h6 className="f-w-600">Name</h6><br></br>
+                                        <h6 className="f-w-600">{userData.name}</h6><br></br>
                                         <p>job</p> <i className=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
                                     </div>
 
@@ -60,11 +75,11 @@ export default function UserProf() {
                                         <div className="row">
                                             <div className="col-sm-6">
                                                 <p className="m-b-10 f-w-600">Email</p>
-                                                <h6 className="text-muted f-w-400">rntng@gmail.com</h6>
+                                                <h6 className="text-muted f-w-400">{userData.email}</h6>
                                             </div>
                                             <div className="col-sm-6">
                                                 <p className="m-b-10 f-w-600">Phone</p>
-                                                <h6 className="text-muted f-w-400">98979989898</h6>
+                                                <h6 className="text-muted f-w-400">{userData.phone}</h6>
                                             </div>
                                         </div>
                                         {/* <footer className="panel-footer">

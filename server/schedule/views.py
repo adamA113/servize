@@ -11,7 +11,7 @@ class ScheduleList(generics.ListCreateAPIView):
     queryset=Schedule.objects.all()
     serializer_class=ScheduleSerializer
 
-
+    
 # @login_required
 @api_view(['POST'])
 def Book(request):
