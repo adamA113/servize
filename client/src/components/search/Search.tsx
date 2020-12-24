@@ -57,7 +57,7 @@ const Search = () => {
                             <div className="row">
                                 <div className="col-lg-3 col-md-3 col-sm-12 p-0"></div>
                                 <div>
-                                    {/* <input type="text" placeholder="search.."></input> */}
+                                    <input type="text" placeholder="search.." className="searchfor"></input>
 
                                     <div className="cat dropdown">
                                         {/* <button className="dropbtn" onClick={()=>{setCat(!cat)}}>Category</button> */}
