@@ -24,7 +24,7 @@ const Test = () => {
     const responsive = {
         desktop: {
             breakpoint: { max: 3000, min: 1024 },
-            items: 3,
+            items: 1,
             slidesToSlide: 1 // optional, default to 1.
         },
         tablet: {
@@ -42,7 +42,7 @@ const Test = () => {
     return (
 
 
-        <Carousel responsive={responsive}>
+        <Carousel responsive={responsive} arrows={false} autoPlay={true} autoPlaySpeed={5000}>
 
             <div className="cat-container">
                 <div className="card-item">

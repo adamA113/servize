@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 // import { store, add } from '../../actions/Users/usersActions';
@@ -13,16 +12,13 @@ import Login from '../Login/Login';
 import ProviderSignup from '../Provider-signup/Provider-signup'
 import Logout from '../Logout/Logout';
 import "./Nav-bar.css";
-const axios = require('axios');
 const $ = require('jquery');
-
-
 
 $(window).on("scroll", function () {
     if ($(window).scrollTop()) {
-        $("nav").addClass("black");
+        $("nav").addClass("white");
     } else {
-        $("nav").removeClass("black");
+        $("nav").removeClass("white");
     }
 });
 
@@ -31,8 +27,7 @@ const Navbar = () => {
     const userInStore = useSelector((state: any) => state.user);
     const dispatch = useDispatch();
     // console.log("store ===> ", userInStore)
-    // console.log("store ===> ", userInStore)
-    let token;
+    let token: any;
     try {
         const serializedState = localStorage.getItem("access_token");
         console.log("token", serializedState);
@@ -45,72 +40,90 @@ const Navbar = () => {
         console.log(e);
     }
 
-    const handleClick = () => {
-        $("#signup-form").show();
+    function openLoginForm() {
+        $("#login-form").addClass("showLoginForm");
+        $('.login-overlay').css({ "display": "block" });
     }
 
-    const selectLang = () => {
-
+    function openSignupForm() {
+        $("#signup-form").addClass("showSignupForm");
+        $('.signup-overlay').css({ "display": "block" });
     }
+
+    // const selectLang = () => {
+
+    // }
 
     const openClick = () => {
-        document.getElementById("mySidenav").style.width = "250px"
+        document.getElementById("mySidenav").style.width = "200px"
     }
-    const closeClick = () => {
+    const closeClick = (e: any) => {
+        e.preventDefault();
         document.getElementById("mySidenav").style.width = "0";
 
     }
 
     return (
-        <header id="nav-bar">
-            <nav className="fixed-top">
-                <span className="menu-icon" onClick={openClick}>
-                    <i className="fa fa-bars fa-2x"></i>
-                </span>
-                <div id="mySidenav" className="sidenav">
-                    <a href="javascript:void(0)" className="closebtn" onClick={closeClick}>&times;</a>
-                    <a href="#">About</a>
-                    <a href="#">{t("how_it_works")}</a>
-                    <a href="#">Browse Jobs</a>
-                    <a href="#">Contact</a>
-                </div>
+        // <header id="nav-bar">
+        <nav id="nav-bar">
+            <div className="menu-icon" onClick={openClick}>
+                <i className="fa fa-bars fa-2x"></i>
+            </div>
 
+            <div id="mySidenav" className="sidenav">
+                <a href="/" className="sidenav-logo">Servize</a>
+                <a href="/" className="closebtn" onClick={closeClick}>&times;</a>
+                <a href="#">About</a>
+                <a href="#">{t("how_it_works")}</a>
+                <a href="#">Browse Jobs</a>
+                <a href="#">Contact</a>
+            </div>
+
+            <div className="logo-container">
                 <a href="/" className="logo">
                     {t("app_name")}
                 </a>
-                <span className="menu">
-                    <ul>
-                        <li className="pc-view"><a href="#">{t("how_it_works")}</a></li>
-                        <li className="pc-view"><a href="#">{t("Browse_Jobs")}</a></li>
-                        <li className="lang-dropdown">
-                            {/* <button onClick={selectLang} className="lang-dropbtn">Languages</button> */}
-                            < div id="lang-Dropdown pc-view" className="lang-dropdown-content">
-                                <span className="pc-view-lang" onClick={() => i18n.changeLanguage("en")}> English</span>
-                                <span className="pc-view-lang" onClick={() => i18n.changeLanguage("ar")}>عربي</span>
-                            </div>
+            </div>
 
-                        </li>
-                        {token === null ?
-                            <span>
-                                <li><Link to="/user/login">{t("log_in")}</Link></li>
-                                {/* <li><Link to="/user/signup">{t("join")}</Link></li> */}
-                                <li><Link to="/user/signup">{t("join")}</Link></li>
-                                
-                            </span>
-                            :
-                            <span>
-                                <li><a href="profiles/user">Profile</a></li>
-                                <li>
-                                    <Button onClick={() => { localStorage.clear(); window.location.href = "/"; }} id="logout">
-                                        Logout
-                            </Button>
-                                </li>
-                            </span>}
+            <div className="navbar-items">
+                <a href="#" className="pc-view">{t("how_it_works")}</a>
+                <a href="#" className="pc-view">{t("Browse_Jobs")}</a>
 
+                <div className="toggle-container">
+                    <label htmlFor="dark-mode" style={{ "display": "none" }}>dark mode switch</label>
+                    <input type="checkbox" id="dark-mode" />
+                    <div className="slider round"></div>
+                </div>
 
-                    </ul>
+                {/* <li className="lang-dropdown">
+                        <button onClick={selectLang} className="lang-dropbtn">Languages</button>
+                        < div id="lang-Dropdown pc-view" className="lang-dropdown-content">
+                            <span className="pc-view-lang" onClick={() => i18n.changeLanguage("en")}> English</span>
+                            <span className="pc-view-lang" onClick={() => i18n.changeLanguage("ar")}>عربي</span>
+                        </div>
 
-                    {/* <div className="select">
+                    </li>
+                    {token === null ?
+                        <span>
+                            <li><Link to="/user/login">{t("log_in")}</Link></li>
+                            <li onClick={openLoginForm}>{t("log_in")}</li>
+                            <li><Link to="/user/signup">{t("join")}</Link></li>
+                            <li onClick={openSignupForm}>{t("join")}</li>
+
+                        </span>
+                        :
+                        <span>
+                            <li><a href="profiles/user">Profile</a></li>
+                            <li>
+                                <Button onClick={() => { localStorage.clear(); window.location.href = "/"; }} id="logout">
+                                    Logout
+                                    </Button>
+                            </li>
+                        </span>} */}
+
+            </div>
+
+            {/* <div className="select">
                         <select
                             value={i18n.language}
                             onChange={(e) =>{
@@ -122,59 +135,9 @@ const Navbar = () => {
                             <option value="ar">عربي</option>
                         </select>
                     </div> */}
-                </span>
-            </nav>
-
-        </header>
-
+        </nav>
+        // </header>
     )
-    // }
-    // export default Navbar;
-    //   return (
-    //     <header id="nav-bar">
-    //       <nav>
-    //         <div className="menu-icon">
-    //           <i className="fa fa-bars fa-2x"></i>
-    //         </div>
-    //         <div className="logo">
-    //           <Link to="/">Servize</Link>
-    //         </div>
-    //         <div className="menu">
-    //           <ul>
-    //             <li>
-    //               <a href="#">How it Works</a>
-    //             </li>
-    //             <li>
-    //               <a href="#">Browse Jobs</a>
-    //             </li>
-    //             <li>
-    //               <a href="#">Language</a>
-    //             </li>
-    //             <li>
-    //               <Link to="/prov/signup">Become a Service Provider</Link>
-    //             </li>
-    //             <li>
-    //               <Link to="/user/login">Log In</Link>
-    //             </li>
-    //             <li>
-    //               <Link to="/user/signup">Join</Link>
-    //             </li>
-    //             <li>
-    //               <Button
-    //                 onClick={() => {
-    //                   localStorage.clear();
-    //                   window.location.href = "/";
-    //                 }}
-    //                 id="logout"
-    //               >
-    //                 Logout
-    //               </Button>
-    //             </li>
-    //           </ul>
-    //         </div>
-    //       </nav>
-    //     </header>
-    //   );
 }
 
 export default Navbar;

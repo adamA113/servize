@@ -49,8 +49,8 @@ function App() {
         {/* <UserView /> */}
         {/* <UserProf /> */}
         {/* <StarRating /> */}
-        {/* <Login />
-        <Signup /> */}
+        {/* <Login /> */}
+        {/* <Signup /> */}
         {/* <ProviderSignup />  */}
         {/* <Search /> */}
         {/* <Calendar /> */}
@@ -66,8 +66,8 @@ function App() {
           {/* <Route exact path="/" component={Main} /> */}
           <Route path="/prov/signup" component={ProviderSignup} />
           <Route path="/client/signup" component={UsersSignup} />
-          <Route path="/user/signup" component={Signup} />
-          <Route path="/user/login" component={Login} />
+          {/* <Route path="/user/signup" component={Signup} /> */}
+          {/* <Route path="/user/login" component={Login} /> */}
           {/* <Route path="/providerProfile" exact component={() => < ProviderProf/>} /> */}
           <Route path="/provider" component={ProviderContainer} />
           <Route path="/auth/users/reset_password/" component={ForgotPassword} />
@@ -84,7 +84,7 @@ function App() {
 
         </Switch>
 
-        <Footer />
+        {/* <Footer /> */}
 
       </div>
     </BrowserRouter>

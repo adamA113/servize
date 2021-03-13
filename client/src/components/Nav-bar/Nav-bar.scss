@@ -1,4 +1,3 @@
-@charset "UTF-8";
 .sidenav {
   height: 100%;
   width: 0;
@@ -10,46 +9,53 @@
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
-}
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 20px;
-  font-size: 36px;
-  margin-left: 50px;
-}
-.sidenav .sidenav-logo {
-  color: #eb002f;
-  position: absolute;
-  top: 10px;
-  left: 0;
-  font-size: 1.5rem;
-}
-.sidenav .sidenav-logo:hover {
-  color: #f76d86;
-}
-.sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #000;
-  display: block;
-  transition: 0.3s;
-}
-.sidenav a:hover {
-  color: #3d393950;
+
+  .closebtn {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+
+  .sidenav-logo {
+    color: #eb002f;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    font-size: 1.5rem;
+    &:hover {
+      color: lighten(#f53c5e, 10);
+    }
+  }
+
+  a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #000;
+    display: block;
+    transition: 0.3s;
+
+    &:hover {
+      color: #3d393950;
+    }
+  }
 }
 
 @media screen and (max-height: 450px) {
   .sidenav {
     padding-top: 15px;
-  }
-  .sidenav a {
-    font-size: 18px;
+
+    a {
+      font-size: 18px;
+    }
   }
 }
 /*side nav*/
+
 /*****************************************************************/
+
 #nav-bar {
   display: flex;
   justify-content: space-between;
@@ -66,19 +72,20 @@
 
 .logo-container {
   display: inline-block;
-}
-.logo-container .logo {
-  line-height: 30px;
-  text-decoration: none;
-  margin: 0 15px;
-  color: #000;
-  font-weight: bold;
-  font-size: 2rem;
-  letter-spacing: 2px;
-}
-.logo-container .logo:hover {
-  text-decoration: none;
-  color: #ff738c;
+  .logo {
+    line-height: 30px;
+    text-decoration: none;
+    margin: 0 15px;
+    color: #000;
+    font-weight: bold;
+    font-size: 2rem;
+    letter-spacing: 2px;
+
+    &:hover {
+      text-decoration: none;
+      color: lighten(#ff6984, 2);
+    }
+  }
 }
 
 .navbar-items {
@@ -95,17 +102,16 @@
 .pc-view {
   text-decoration: none;
   padding: 10px 20px;
-  color: black;
+  color: rgb(0, 0, 0);
   font-size: 1.1rem;
   margin-right: 20px;
+  &:hover {
+    text-decoration: none;
+    color: lighten(#ff6984, 5);
+  }
 }
-.pc-view:hover {
-  text-decoration: none;
-  color: #ff8399;
-}
-
 .menu-icon {
-  color: #000;
+  color:#000;
   display: none;
 }
 
@@ -113,27 +119,24 @@
   .pc-view {
     display: none;
   }
-
   .menu-icon {
     display: inline-block;
   }
-
   .menu-icon:hover {
     cursor: pointer;
   }
-
   .navbar-items {
     display: inline-block;
+    .toggle-container {
+      margin: 0;
+      margin-bottom: 18px;
+    }
   }
-  .navbar-items .toggle-container {
-    margin: 0;
-    margin-bottom: 18px;
-  }
-
   .logo-container {
     margin: 0 auto;
   }
 }
+
 .white {
   background-color: #f6f8fa;
   border-bottom: 1px solid #eaecef;
@@ -146,8 +149,7 @@
   width: 45px;
   height: 25px;
   pointer-events: none;
-  -webkit-user-select: none;
-          user-select: none;
+  user-select: none;
   margin: 0 20px;
 }
 
@@ -181,7 +183,6 @@
   transition: 0.2s;
   pointer-events: none;
 }
-
 .slider::after {
   position: absolute;
   content: "🌞";
@@ -215,7 +216,50 @@ input:checked + .slider:after {
   border-radius: 50%;
 }
 
+// nav.black ul {
+//   background: #202020;
+// }
+
+// nav.black li,
+// nav.black a {
+//   color: rgb(255, 255, 255);
+// }
+
+// nav.black .pc-view-lang {
+//   color: rgb(255, 255, 255);
+// }
+
+// nav ul li {
+//   display: inline-block;
+//   padding: 10px 10px;
+// }
+// .menu-icon {
+//   display: none;
+// }
+
+// .menu a {
+//   text-decoration: none;
+//   color: rgb(0, 0, 0);
+//   font-size: 16px;
+// }
+
+// .menu .pc-view-lang {
+//   color: rgb(0, 0, 0);
+//   font-size: 16px;
+// }
+
+// @media screen and (max-width: 700px) {
+//   .menu .pc-view {
+//     float: none;
+//     display: none;
+//     text-align: left;
+//   }
+//   .menu-icon {
+//     display: inline-block;
+//   }
+// }
 /***********************************************************************************/
+
 /* //////////////////////////////// */
 /* .carousel-item {
 	height: 100vh;

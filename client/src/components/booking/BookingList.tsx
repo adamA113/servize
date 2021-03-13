@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import FontAwesome from 'react-fontawesome';
-import './booklist.css'
+// import './booklist.css'
 
 export default function BookingList() {
 	

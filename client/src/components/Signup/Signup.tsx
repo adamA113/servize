@@ -25,19 +25,21 @@ const Signup = (props: any) => {
     //     document.getElementById("signup-form").style.display = "block";
     // }
 
-    const closeForm = () => {
-        //    $("signup-form").style.display = "none";
-        $("#signup-form").hide();
-
-    }
-
     const { register, handleSubmit, errors } = useForm<FormData>();
     const [submitting, setSubmitting] = useState<boolean>(false);
     const [serverErrors, setServerErrors] = useState<Array<string>>([]);
 
+    function closeSignupForm() {
+        $("#signup-form").removeClass("showSignupForm");
+        $('.signup-overlay').css({ "display": "none" });
+
+    }
+
     return (
 
-        <div id="signup" className="center styled">
+        <div id="signup" className="center">
+
+            <div className="signup-overlay"></div>
             <form id="signup-form"
                 onSubmit={handleSubmit((formData) => {
 
@@ -64,6 +66,9 @@ const Signup = (props: any) => {
                     //     })
                 })}
             >
+
+                <div className="signup-close" onClick={closeSignupForm}>&times;</div>
+
                 <h1>Sign Up</h1>
                 <div className="column">
                     <label htmlFor="username">User Name:</label>
@@ -87,10 +92,9 @@ const Signup = (props: any) => {
                 </div>
 
                 <button className="btn-signup" >Sign Up</button>
-                <button className="btn cancel" onClick={closeForm}>Close</button>
 
                 <div className="password-req" >8 characters or longer. Combine upper and lowercase letters and numbers</div><br />
-                <p >Already have an account? <Link to="/user/login" style={{ textDecoration: "none" }}>Sign In</Link></p>
+                <p >Already have an account? <Link to="/user/login" style={{ textDecoration: "none" }}>Log In</Link></p>
                 {/* {userInStore.user.status ? null : <Redirect to="/usertype" />} */}
             </form>
         </div>

@@ -9,6 +9,7 @@ import { useSelector, useDispatch } from 'react-redux';
 // import 'mdbreact/dist/css/mdb.css';
 import './Login.css';
 const axios = require('axios');
+const $ = require('jquery');
 
 interface formData {
 
@@ -30,8 +31,17 @@ export default function Login() {
     // use email not formData
     const [access, setAccess] = useState("");
     const [refresh, setRefresh] = useState("");
+
+    function closeLoginForm() {
+        console.log("cvccccccccccc")
+        $("#login-form").removeClass("showLoginForm");
+        $('.login-overlay').css({ "display": "none" });
+    }
+    
     return (
-        < div id="login" className="center styled" >
+        < div id="login" className="center" >
+
+            <div className="login-overlay"></div>
             <form id="login-form"
                 onSubmit={handleSubmit(async (formData) => {
                     console.log(formData);
@@ -71,6 +81,8 @@ export default function Login() {
 
                 })}
             >
+                <div className="login-close" onClick={closeLoginForm}>&times;</div>
+
                 <h1>Log In</h1>
                 <label htmlFor="email" >Email:</label>
                 <input type="email" className="text" id="email" name="email" ref={register({ required: "required" })} />

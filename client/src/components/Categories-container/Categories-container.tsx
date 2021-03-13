@@ -10,7 +10,7 @@ import 'react-multi-carousel/lib/styles.css';
 // import '@fortawesome/fontawesome-free/css/all.min.css';
 // import 'bootstrap-css-only/css/bootstrap.min.css';
 // import 'mdbreact/dist/css/mdb.css';
-import './Categories-card.css';
+import './Categories-container.css';
 
 import Electrican from '../catagories/elect1.jpg';
 import Painting from '../catagories/paint.jpg';
@@ -24,15 +24,15 @@ import Gypsum from '../catagories/jypsum.jpg';
 import Appliance from '../catagories/light.jpg';
 
 var catImages = [{ catImg: Electrican, catName: "Electrican" },
-    { catImg: Painting, catName: "Painting"},
-    { catImg: Tiling, catName: "Tiling"},
-    { catImg: Plaster, catName: "Tiling"},
-    { catImg: Alumini, catName: "Alumini"},
-    { catImg: Carpenter, catName: "Carpenter"},
-    { catImg: Satellite, catName:"Satellite"},
-    { catImg: Parquet, catName:"Parquet"},
-    { catImg: Gypsum, catName:"Gypsum"},
-    { catImg: Appliance, catName:"Appliance"}
+{ catImg: "https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741663/animated-explainer-2x.png", catName: "Painting" },
+{ catImg: Tiling, catName: "Tiling" },
+{ catImg: Plaster, catName: "Tiling" },
+{ catImg: Alumini, catName: "Alumini" },
+{ catImg: Carpenter, catName: "Carpenter" },
+{ catImg: Satellite, catName: "Satellite" },
+{ catImg: Parquet, catName: "Parquet" },
+{ catImg: Gypsum, catName: "Gypsum" },
+{ catImg: Appliance, catName: "Appliance" }
 ]
 
 const axios = require('axios');
@@ -47,7 +47,7 @@ const Categories = (props: any) => {
         },
         tablet: {
             breakpoint: { max: 1024, min: 464 },
-            items: 2,
+            items: 4,
             slidesToSlide: 2 // optional, default to 1.
         },
         mobile: {
@@ -82,16 +82,18 @@ const Categories = (props: any) => {
 
     // if (userInStore !== undefined) {
     return (
-        <Carousel responsive={responsive}>
+        <div className="slides-container" >
+            <Carousel responsive={responsive} infinite={true} containerClass="carousel-container">
+                {catImages.map((user: any, index: any) =>
+                    <CategoriesCard
+                        key={index}
+                        user={user}
+                    />
+                )}
 
-            {catImages.map((user: any, index: any) =>
-                <CategoriesCard
-                    key={index}
-                    user={user}
-                />
-            )}
+            </Carousel >
+        </div>
 
-        </Carousel >
     )
     // }
     // else {
