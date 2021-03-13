@@ -1,4 +1,3 @@
-import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import FontAwesome from 'react-fontawesome';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
@@ -12,9 +11,7 @@ import 'pure-react-carousel/dist/react-carousel.es.css';
 
 // import './Header.css'
 
-
-
-export default function Header() {
+const Header = () => {
 
 	return (
 
@@ -54,3 +51,5 @@ export default function Header() {
 
 	)
 }
+
+export default Header;

@@ -8,8 +8,21 @@ import { useSelector, useDispatch } from 'react-redux';
 // import 'bootstrap-css-only/css/bootstrap.min.css';
 // import 'mdbreact/dist/css/mdb.css';
 import './Login.css';
-const axios = require('axios');
 const $ = require('jquery');
+const axios = require('axios');
+
+$ (function(){
+    if (document.getElementById("login-form").classList.contains("showLoginForm")) {
+        $(document).on("click", () => {
+            console.log('clicked outside');
+        });
+
+        $("#login-form").on("click", (event) => {
+            console.log('clicked inside');
+            event.stopPropagation();
+        });
+    }
+})
 
 interface formData {
 
@@ -36,8 +49,9 @@ export default function Login() {
         console.log("cvccccccccccc")
         $("#login-form").removeClass("showLoginForm");
         $('.login-overlay').css({ "display": "none" });
+        $('#login').css({ "display": "none" });
     }
-    
+
     return (
         < div id="login" className="center" >
 
@@ -101,6 +115,6 @@ export default function Login() {
                 <p >Don't have an account?  <Link to="/user/signup" style={{ textDecoration: "none" }}>Sign up</Link></p>
             </form>
         </div>
-             
+
     )
 }

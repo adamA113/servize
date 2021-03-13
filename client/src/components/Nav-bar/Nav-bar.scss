@@ -2,7 +2,7 @@
   height: 100%;
   width: 0;
   position: fixed;
-  z-index: 1000;
+  z-index: 30;
   top: 0;
   left: 0;
   background-color: #fff;
@@ -64,7 +64,7 @@
   position: sticky;
   padding: 0 10px;
   top: 0;
-  z-index: 100;
+  z-index: 15;
   width: 100%;
   line-height: 30px;
   background-color: #cfd2e9;
@@ -97,6 +97,12 @@
   color: #000;
   font-size: 16px;
   text-align: right;
+
+  .user-register > div{
+    display: inline-block;
+    // padding: 10px 20px;
+
+  }
 }
 
 .pc-view {
@@ -115,8 +121,8 @@
   display: none;
 }
 
-@media screen and (max-width: 770px) {
-  .pc-view {
+@media screen and (max-width: 850px) {
+  .pc-view, .user-register {
     display: none;
   }
   .menu-icon {
@@ -141,7 +147,7 @@
   background-color: #f6f8fa;
   border-bottom: 1px solid #eaecef;
 }
-
+/******************************toggle switch************************************/
 .toggle-container {
   position: relative;
   top: 12px;

@@ -1,6 +1,8 @@
 #login {
-  position: relative;
+  position: absolute;
+  display: none;
   top: -850px;
+  left: 37vw;
 }
 
 #login-form {
@@ -11,14 +13,13 @@
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   background: white;
-  z-index: 2;
-  opacity: 0;
-  display: none;
+  z-index: 20;
+  opacity: 0; 
 }
 
 .showLoginForm {
   opacity: 1;
-  /* display: block; */
+  display: block;
   animation: popup 1s ease forwards;
 }
 

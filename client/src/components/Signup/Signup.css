@@ -1,6 +1,8 @@
 #signup {
-  position: relative;
-  top: -1150px;
+  position: absolute;
+  display: none;
+  top: -850px;
+  left: 37vw;
 }
 
 #signup-form {
@@ -13,12 +15,11 @@
   background: white;
   z-index: 2;
   opacity: 0;
-  display: none;
 }
 
 .showSignupForm {
   opacity: 1;
-  /* display: block; */
+  display: block;
   animation: popup 1s ease forwards;
 }
 
@@ -27,10 +28,10 @@
     opacity: 0;
   }
   70% {
-    transform: translateY(930px);
+    transform: translateY(530px);
   }
   100% {
-    transform: translateY(930px);
+    transform: translateY(530px);
     opacity: 1;
   }
 }

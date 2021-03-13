@@ -12,7 +12,7 @@ import Login from '../Login/Login';
 import ProviderSignup from '../Provider-signup/Provider-signup'
 import Logout from '../Logout/Logout';
 import "./Nav-bar.css";
-const $ = require('jquery');
+import $ from 'jquery';
 
 $(window).on("scroll", function () {
     if ($(window).scrollTop()) {
@@ -42,17 +42,19 @@ const Navbar = () => {
 
     function openLoginForm() {
         $("#login-form").addClass("showLoginForm");
-        $('.login-overlay').css({ "display": "block" });
+        $('.login-overlay').css({ "display": "block" }); 
+        $('#login').css({ "display": "block" });
     }
 
     function openSignupForm() {
         $("#signup-form").addClass("showSignupForm");
         $('.signup-overlay').css({ "display": "block" });
+        $('#signup').css({ "display": "block" });
     }
 
-    // const selectLang = () => {
+    const selectLang = () => {
 
-    // }
+    }
 
     const openClick = () => {
         document.getElementById("mySidenav").style.width = "200px"
@@ -64,7 +66,6 @@ const Navbar = () => {
     }
 
     return (
-        // <header id="nav-bar">
         <nav id="nav-bar">
             <div className="menu-icon" onClick={openClick}>
                 <i className="fa fa-bars fa-2x"></i>
@@ -89,12 +90,6 @@ const Navbar = () => {
                 <a href="#" className="pc-view">{t("how_it_works")}</a>
                 <a href="#" className="pc-view">{t("Browse_Jobs")}</a>
 
-                <div className="toggle-container">
-                    <label htmlFor="dark-mode" style={{ "display": "none" }}>dark mode switch</label>
-                    <input type="checkbox" id="dark-mode" />
-                    <div className="slider round"></div>
-                </div>
-
                 {/* <li className="lang-dropdown">
                         <button onClick={selectLang} className="lang-dropbtn">Languages</button>
                         < div id="lang-Dropdown pc-view" className="lang-dropdown-content">
@@ -102,24 +97,30 @@ const Navbar = () => {
                             <span className="pc-view-lang" onClick={() => i18n.changeLanguage("ar")}>عربي</span>
                         </div>
 
-                    </li>
-                    {token === null ?
-                        <span>
-                            <li><Link to="/user/login">{t("log_in")}</Link></li>
-                            <li onClick={openLoginForm}>{t("log_in")}</li>
-                            <li><Link to="/user/signup">{t("join")}</Link></li>
-                            <li onClick={openSignupForm}>{t("join")}</li>
+                    </li> */}
+                {token === null ?
+                    <div className="user-register">
+                        {/* <li><Link to="/user/login">{t("log_in")}</Link></li> */}
+                        <div className="pc-view" onClick={openLoginForm}>{t("log_in")}</div>
+                        {/* <li><Link to="/user/signup">{t("join")}</Link></li> */}
+                        <div className="pc-view" onClick={openSignupForm}>{t("join")}</div>
 
-                        </span>
-                        :
-                        <span>
-                            <li><a href="profiles/user">Profile</a></li>
-                            <li>
-                                <Button onClick={() => { localStorage.clear(); window.location.href = "/"; }} id="logout">
-                                    Logout
+                    </div>
+                    :
+                    <div>
+                        <li><a href="profiles/user">Profile</a></li>
+                        <li>
+                            <Button onClick={() => { localStorage.clear(); window.location.href = "/"; }} id="logout">
+                                Logout
                                     </Button>
-                            </li>
-                        </span>} */}
+                        </li>
+                    </div>}
+
+                <div className="toggle-container">
+                    <label htmlFor="dark-mode" style={{ "display": "none" }}>dark mode switch</label>
+                    <input type="checkbox" id="dark-mode" />
+                    <div className="slider round"></div>
+                </div>
 
             </div>
 
@@ -136,7 +137,6 @@ const Navbar = () => {
                         </select>
                     </div> */}
         </nav>
-        // </header>
     )
 }
 
