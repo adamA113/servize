@@ -1,52 +1,45 @@
 import React, { useState } from 'react';
 import { appendErrors, useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
-import { logIn } from '../../actions/Users/usersActions';
+import { logIn, openSignupForm } from '../../actions/Users/usersActions';
 import { useSelector, useDispatch } from 'react-redux';
-// import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from 'mdbreact';
-// import '@fortawesome/fontawesome-free/css/all.min.css';
-// import 'bootstrap-css-only/css/bootstrap.min.css';
-// import 'mdbreact/dist/css/mdb.css';
 import './Login.css';
-const $ = require('jquery');
-const axios = require('axios');
+import $ from 'jquery';
 
-$ (function(){
-    if (document.getElementById("login-form").classList.contains("showLoginForm")) {
-        $(document).on("click", () => {
-            console.log('clicked outside');
-        });
+// $ (function(){
+//     if (document.getElementById("login-form").classList.contains("showLoginForm")) {
+//         $(document).on("click", () => {
+//             console.log('clicked outside');
+//         });
 
-        $("#login-form").on("click", (event) => {
-            console.log('clicked inside');
-            event.stopPropagation();
-        });
-    }
-})
+//         $("#login-form").on("click", (event) => {
+//             console.log('clicked inside');
+//             event.stopPropagation();
+//         });
+//     }
+// })
 
 interface formData {
-
     email: string;
     password: string;
 }
 
-export default function Login() {
+const Login = (props: any) => {
     const userInStore = useSelector((state: any) => state.user);
     const dispatch = useDispatch();
 
     const { register, handleSubmit, errors } = useForm<formData>();
     const [submitting, setSubmitting] = useState<boolean>(false);
     const [serverErrors, setServerErrors] = useState<Array<string>>([]);
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState(''); // hooks 
+    // const [email, setEmail] = useState('');
+    // const [password, setPassword] = useState(''); // hooks 
     // create state for email and password 
     // use setemail
     // use email not formData
-    const [access, setAccess] = useState("");
-    const [refresh, setRefresh] = useState("");
+    // const [access, setAccess] = useState("");
+    // const [refresh, setRefresh] = useState("");
 
     function closeLoginForm() {
-        console.log("cvccccccccccc")
         $("#login-form").removeClass("showLoginForm");
         $('.login-overlay').css({ "display": "none" });
         $('#login').css({ "display": "none" });
@@ -60,38 +53,40 @@ export default function Login() {
                 onSubmit={handleSubmit(async (formData) => {
                     console.log(formData);
 
-                    await axios.post(`http://localhost:8000/auth/jwt/create`,
-                        {
-                            email: formData.email,
-                            password: formData.password,
-                        })
+                    dispatch(logIn(formData.email, formData.password));
 
-                        .then(async (result: any) => {
-                            console.log("post", result)
-                            setAccess(result.data.access);
-                            setRefresh(result.data.refresh);
-                            let res = await axios({
-                                url: 'http://localhost:8000/auth/users/me/',
-                                method: 'get',
-                                // timeout: 8000,
-                                headers: {
-                                    'Authorization': 'JWT ' + access,
-                                    'Content-Type': 'application/json',
-                                }
-                            })
-                            if (res.status == 200) {
-                                // test for status you want, etc
-                                console.log("get", res)
-                                localStorage.setItem("access_token", access);
-                                localStorage.setItem("refresh_token", refresh);
-                                dispatch(logIn(res.data.name, res.data.email, res.data.id))
-                                window.location.href = "/"
-                            }
+                    // await axios.post(`http://localhost:8000/auth/jwt/create/`,
+                    //     {
+                    //         email: formData.email,
+                    //         password: formData.password,
+                    //     })
 
-                        })
-                        .catch((err: any) => {
-                            console.error("err===== =>", err);
-                        })
+                    //     .then(async (result: any) => {
+                    //         console.log("post", result)
+                    //         setAccess(result.data.access);
+                    //         setRefresh(result.data.refresh);
+                    //         let res = await axios({
+                    //             url: 'http://localhost:8000/auth/users/me/',
+                    //             method: 'get',
+                    //             // timeout: 8000,
+                    //             headers: {
+                    //                 'Authorization': 'JWT ' + access,
+                    //                 'Content-Type': 'application/json',
+                    //             }
+                    //         })
+                    //         if (res.status === 200) {
+                    //             // test for status you want, etc
+                    //             console.log("get", res)
+                    //             localStorage.setItem("access_token", access);
+                    //             localStorage.setItem("refresh_token", refresh);
+                    //             dispatch(logIn(res.data.name, res.data.email, res.data.id))
+                    //             window.location.href = "/"
+                    //         }
+
+                    //     })
+                    //     .catch((err: any) => {
+                    //         console.error("err===== =>", err);
+                    //     })
 
                 })}
             >
@@ -109,12 +104,12 @@ export default function Login() {
                 <label htmlFor="password" >Password:</label>
                 <input type="password" className="text" id="password" name="password" ref={register({ required: "required" })} />
 
-                {/* <button className="btn cancel" onClick={closeForm}>Close</button> */}
-
                 <button className="btn-login" >Log In</button><br />
-                <p >Don't have an account?  <Link to="/user/signup" style={{ textDecoration: "none" }}>Sign up</Link></p>
+
+                <p >Don't have an account?  <span style={{ color: "red", cursor: "pointer" }} onClick={() => { closeLoginForm(); openSignupForm() }}>Sign up</span></p>
             </form>
         </div>
-
     )
 }
+
+export default Login;

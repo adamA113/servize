@@ -3,6 +3,7 @@
   display: none;
   top: -850px;
   left: 37vw;
+  /* z-index: 1000; */
 }
 
 #login-form {

@@ -1,14 +1,11 @@
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-// import { store, add } from '../../actions/Users/usersActions';
-import { connect } from 'react-redux'
+import { openLoginForm, openSignupForm } from '../../actions/Users/usersActions';
 import { State } from '../../reducers/Users/usersReducer'
 import { useTranslation } from "react-i18next";
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { RootStore } from '../../reducers/rootReducer';
 import Button from "@material-ui/core/Button";
-import Signup from '../Signup/Signup';
-import Login from '../Login/Login';
 import ProviderSignup from '../Provider-signup/Provider-signup'
 import Logout from '../Logout/Logout';
 import "./Nav-bar.css";
@@ -29,7 +26,7 @@ const Navbar = () => {
     // console.log("store ===> ", userInStore)
     let token: any;
     try {
-        const serializedState = localStorage.getItem("access_token");
+        const serializedState = localStorage.getItem("access");
         console.log("token", serializedState);
         if (serializedState === null) {
             token = null;
@@ -38,18 +35,6 @@ const Navbar = () => {
     }
     catch (e) {
         console.log(e);
-    }
-
-    function openLoginForm() {
-        $("#login-form").addClass("showLoginForm");
-        $('.login-overlay').css({ "display": "block" }); 
-        $('#login').css({ "display": "block" });
-    }
-
-    function openSignupForm() {
-        $("#signup-form").addClass("showSignupForm");
-        $('.signup-overlay').css({ "display": "block" });
-        $('#signup').css({ "display": "block" });
     }
 
     const selectLang = () => {
@@ -112,7 +97,7 @@ const Navbar = () => {
                         <li>
                             <Button onClick={() => { localStorage.clear(); window.location.href = "/"; }} id="logout">
                                 Logout
-                                    </Button>
+                            </Button>
                         </li>
                     </div>}
 

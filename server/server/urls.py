@@ -7,12 +7,13 @@ urlpatterns = [
     
     path('admin/', admin.site.urls),
     # re_path(r'^.*', TemplateView.as_view(template_name='index.html')),
-    re_path('', TemplateView.as_view(template_name='index.html')),
-    path('category/',include('Category.urls')),
-    path('location/',include('Location.urls')),
-    path('reviews/',include('Reviews.urls')),
-    path('user/',include('User.urls')),
-    path('serviceprovider/',include('ServiceProvider.urls')),
+    # re_path('', TemplateView.as_view(template_name='index.html')),
+    # path('category/',include('Category.urls')),
+    # path('location/',include('Location.urls')),
+    # path('reviews/',include('Reviews.urls')),
+    # path('user/',include('User.urls')), 
+     
+    # path('serviceprovider/',include('ServiceProvider.urls')),
     path('auth/', include('djoser.urls')),
     path('api/auth/', include('djoser.urls.authtoken')),
     path('auth/token/login/', include('djoser.urls')),           #login
@@ -27,7 +28,9 @@ urlpatterns = [
 
     path('auth/users/reset_password_confirm/', include('djoser.urls')),  #Use this endpoint to finish reset password process
    
-    path('calender/', include('schedule.urls')), 
+    # path('calender/', include('schedule.urls')), 
                                        # add urls for calender app
 
 ]
+
+# urlpatterns += [re_path(r'^.*', TemplateView.as_view(template_name='index.html'))]
