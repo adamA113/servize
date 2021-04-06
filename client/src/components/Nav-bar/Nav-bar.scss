@@ -98,10 +98,13 @@
   font-size: 16px;
   text-align: right;
 
-  .user-register > div{
+  .user-register > div {
     display: inline-block;
-    // padding: 10px 20px;
 
+    a {
+      text-decoration: none;
+      color: #000;
+    }
   }
 }
 
@@ -117,12 +120,13 @@
   }
 }
 .menu-icon {
-  color:#000;
+  color: #000;
   display: none;
 }
 
 @media screen and (max-width: 850px) {
-  .pc-view, .user-register {
+  .pc-view,
+  .user-register {
     display: none;
   }
   .menu-icon {

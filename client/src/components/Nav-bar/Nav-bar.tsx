@@ -85,20 +85,17 @@ const Navbar = () => {
                     </li> */}
                 {token === null ?
                     <div className="user-register">
-                        {/* <li><Link to="/user/login">{t("log_in")}</Link></li> */}
                         <div className="pc-view" onClick={openLoginForm}>{t("log_in")}</div>
-                        {/* <li><Link to="/user/signup">{t("join")}</Link></li> */}
                         <div className="pc-view" onClick={openSignupForm}>{t("join")}</div>
-
                     </div>
                     :
-                    <div>
-                        <li><a href="profiles/user">Profile</a></li>
-                        <li>
+                    <div className="user-register">
+                        <div className="pc-view"><a href="profiles/user">Profile</a></div>
+                        <div className="pc-view">
                             <Button onClick={() => { localStorage.clear(); window.location.href = "/"; }} id="logout">
                                 Logout
                             </Button>
-                        </li>
+                        </div>
                     </div>}
 
                 <div className="toggle-container">

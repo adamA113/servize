@@ -38,13 +38,13 @@
     "jquery": "^3.5.1",
     "mdbreact": "^5.0.0",
     "pure-react-carousel": "^1.27.6",
-    "react": "^17.0.1",
+    "react": "^17.0.2",
     "react-bootstrap": "^1.4.0",
     "react-bootstrap-date-time-picker": "0.0.3",
     "react-datepicker": "^3.3.0",
     "react-datetime-picker": "^3.0.4",
     "react-datetimepicker-bootstrap": "^1.1.2",
-    "react-dom": "^17.0.1",
+    "react-dom": "^17.0.2",
     "react-fontawesome": "^1.7.1",
     "react-hook-form": "^6.12.2",
     "react-i18next": "^11.8.4",
@@ -71,12 +71,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "postinstall": "npm run build"
+    "eject": "react-scripts eject"
   },
   "engines": {
-    "node": "14.10.1",
-    "npm": "6.14.8"
+    "node": "15.10.0",
+    "npm": "7.5.3"
   },
   "eslintConfig": {
     "extends": [
