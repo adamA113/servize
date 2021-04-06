@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Signup from './components/Signup/Signup';
 import Usertype from './components/Signup/Usertype';
@@ -49,8 +48,8 @@ function App() {
         {/* <UserView /> */}
         {/* <UserProf /> */}
         {/* <StarRating /> */}
-        <Login />
-        <Signup />
+        {/* <Login />
+        <Signup /> */}
         {/* <ProviderSignup />  */}
         {/* <Search /> */}
         {/* <Calendar /> */}
@@ -66,8 +65,6 @@ function App() {
           {/* <Route exact path="/" component={Main} /> */}
           <Route path="/prov/signup" component={ProviderSignup} />
           <Route path="/client/signup" component={UsersSignup} />
-          {/* <Route path="/user/signup" component={Signup} /> */}
-          {/* <Route path="/user/login" component={Login} /> */}
           {/* <Route path="/providerProfile" exact component={() => < ProviderProf/>} /> */}
           <Route path="/provider" component={ProviderContainer} />
           <Route path="/auth/users/reset_password/" component={ForgotPassword} />
@@ -79,8 +76,6 @@ function App() {
           <Route path="/profiles/providerview" component={ProviderView} />
           <Route path="/profiles/user" component={UserProf} />
           <Route path="/profiles/userview" component={UserView} />
-
-
 
         </Switch>
 

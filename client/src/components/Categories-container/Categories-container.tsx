@@ -7,6 +7,8 @@ import CategoriesCard from "./Categories-card";
 import { State } from '../../reducers/Users/usersReducer'
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import $ from 'jquery';
+import axios from "axios";
 // import '@fortawesome/fontawesome-free/css/all.min.css';
 // import 'bootstrap-css-only/css/bootstrap.min.css';
 // import 'mdbreact/dist/css/mdb.css';
@@ -35,8 +37,7 @@ var catImages = [{ catImg: Electrican, catName: "Electrican" },
 { catImg: Appliance, catName: "Appliance" }
 ]
 
-const axios = require('axios');
-const $ = require('jquery');
+
 
 const Categories = (props: any) => {
     const responsive = {

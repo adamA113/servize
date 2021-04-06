@@ -1,10 +1,9 @@
-import React from 'react';
-import { MDBCard, MDBCardImage, MDBIcon, MDBRow, MDBCol } from 'mdbreact';
+// import { MDBCard, MDBCardImage, MDBIcon, MDBRow, MDBCol } from 'mdbreact';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap-css-only/css/bootstrap.min.css';
-import 'mdbreact/dist/css/mdb.css';
+// import 'mdbreact/dist/css/mdb.css';
 // import './Catagories.css';
-import SettingsIcon from '@material-ui/icons/Settings';
+// import SettingsIcon from '@material-ui/icons/Settings';
 
 ////////////images/////////
 import Electrican from './elect1.jpg';
@@ -22,7 +21,7 @@ import Appliance from './light.jpg';
 
 const Catagories = () => {
     return (
-        <div className="container mt-2">
+        <div className="cat-container mt-2">
             <div className="row">
 
                 <div className="col-md-3 col-sm-6">

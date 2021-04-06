@@ -2,6 +2,9 @@ img{
     height:250px;
     width:100%;
   }
+  .cat-container{
+    border:1px solid black;
+  }
   
   div [class^="col-"]{
     padding-left:10px;
