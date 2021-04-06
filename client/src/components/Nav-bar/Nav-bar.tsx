@@ -75,14 +75,15 @@ const Navbar = () => {
                 <a href="#" className="pc-view">{t("how_it_works")}</a>
                 <a href="#" className="pc-view">{t("Browse_Jobs")}</a>
 
-                {/* <li className="lang-dropdown">
-                        <button onClick={selectLang} className="lang-dropbtn">Languages</button>
-                        < div id="lang-Dropdown pc-view" className="lang-dropdown-content">
-                            <span className="pc-view-lang" onClick={() => i18n.changeLanguage("en")}> English</span>
-                            <span className="pc-view-lang" onClick={() => i18n.changeLanguage("ar")}>عربي</span>
-                        </div>
+                <div className="lang-dropdown">
+                    <button onClick={selectLang} className="lang-dropbtn pc-view">Languages</button>
+                    <div className="lang-dropdown-content">
+                        <span className="pc-view-lang" onClick={() => i18n.changeLanguage("en")}> English</span>
+                        <span className="pc-view-lang" onClick={() => i18n.changeLanguage("ar")}>عربي</span>
+                    </div>
 
-                    </li> */}
+                </div>
+
                 {token === null ?
                     <div className="user-register">
                         <div className="pc-view" onClick={openLoginForm}>{t("log_in")}</div>
