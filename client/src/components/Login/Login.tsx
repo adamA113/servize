@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { appendErrors, useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
-import { logIn, openSignupForm } from '../../actions/Users/usersActions';
+import { logIn, openSignupForm, openForgotForm } from '../../actions/Users/usersActions';
 import { useSelector, useDispatch } from 'react-redux';
 import './Login.css';
 import $ from 'jquery';
@@ -107,6 +107,8 @@ const Login = (props: any) => {
                 <button className="btn-login" >Log In</button><br />
 
                 <p >Don't have an account?  <span style={{ color: "red", cursor: "pointer" }} onClick={() => { closeLoginForm(); openSignupForm() }}>Sign up</span></p>
+
+                <p style={{ color: "red", cursor: "pointer" }} onClick={() => { closeLoginForm(); openForgotForm()}}>Forgot Password?</p>
             </form>
         </div>
     )
