@@ -96,6 +96,40 @@ export const logIn = (email: string, password: string) => async (dispatch: Dispa
     }
 }
 
+export const resetPassword = (email: string) => async (dispatch: Dispatch<DispatchUserTypes>) => {
+    try {
+        await axios.post(`http://localhost:8000/auth/users/reset_password/`, { email: email })
+
+            .then((result: any) => {
+                // console.log("axios", result)
+
+            })
+            .catch((err: any) => {
+                console.log("action error", err)
+            })
+    }
+    catch (e) {
+        console.log("action error", e)
+    }
+}
+
+export const confirmResetPassword = (uid: any, token: any, newPassword: any) => async (dispatch: Dispatch<DispatchUserTypes>) => {
+    try {
+        await axios.post(`http://localhost:8000/auth/users/reset_password_confirm/`, { uid: uid, token: token, new_password: newPassword })
+
+            .then((result: any) => {
+                // console.log("axios", result)
+
+            })
+            .catch((err: any) => {
+                console.log("action error", err)
+            })
+    }
+    catch (e) {
+        console.log("action error", e)
+    }
+}
+
 export const addRole = (role: string) => (dispatch: Dispatch<DispatchUserTypes>) => {
     // console.log(username, email, password )
     dispatch({ type: ADD_ROLE, payload: role })
@@ -116,6 +150,12 @@ export const openSignupForm = () => {
     $("#signup-form").addClass("showSignupForm");
     $('.signup-overlay').css({ "display": "block" });
     $('#signup').css({ "display": "block" });
+}
+
+export const openForgotForm = () => {
+    $("#forgot-form").addClass("showForgotForm");
+    $('.forgot-overlay').css({ "display": "block" });
+    $('#forgot').css({ "display": "block" });
 }
 
 
