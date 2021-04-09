@@ -8,8 +8,15 @@
 1. [Deployment](#deployment)
 1. [Team](#team)
 ### Project Aim 
+* The is a website where you create an account either as a customer or as a service provider (handyman/ technician).
+* As a customer you can search for certain services and choose the technician you want to help you, and filter them via prices or overall ratings.
+* As a technician you can offer your services and your special offers (if any) to attract customers to you.
+
+
 
 ### General Info
+* The website will be initially used to search for Technicians/Handymen at the beginning. 
+* But the final product will provide more general and wide services such as other freelance websites. 
 
 ### Technologies
 Servize uses a number of open source projects:
@@ -65,7 +72,8 @@ $ python manage.py runserver
 ```
 
 ### Deployment 
-[Heroku](https://servize-web.herokuapp.com/)
+In progress ...
+<!-- [Heroku](https://servize-web.herokuapp.com/) -->
 
 
 ## Team
