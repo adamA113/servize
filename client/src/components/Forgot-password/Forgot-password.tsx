@@ -1,66 +1,40 @@
-// import { signUp } from '../../actions/Users/usersActions';
-import React, { useState } from 'react';
+import { openLoginForm, resetPassword } from '../../actions/Users/usersActions';
+import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
-// import './ForgotPassword.css';
-const axios = require('axios');
-const $ = require('jquery');
-
+import './Forgot-password.css';
+import $ from 'jquery';
 const ForgotPassword = () => {
 
     const dispatch = useDispatch();
     const userInStore = useSelector((state: any) => state.user);
-    console.log("rootstore", userInStore)
+    const [email, setEmail] = useState("")
+    console.log("email", email)
+
     const handleSubmit = (e: any) => {
         e.preventDefault();
-        let input = $('#forgot-form').serializeArray();
-        // console.log(input[0].value);
-        // const [email, setEmail] = useState("")
-        // dispatch(store(input))
-        // setEmail("");
+        dispatch(resetPassword(email));
+    }
 
-        let options = {
-            url: `http://localhost:3000/auth/users/reset_password/`,
-            method: 'post',
-            data: { email: input[0].value }
-        }
-
-        axios(options)
-            .then((results: any) => {
-                console.log(results);
-
-            })
-            .catch((err: any) => {
-                console.error("err===== =>", err);
-            })
-
-        try {
-            const serializedState = localStorage.getItem("state");
-            if (serializedState === null) {
-                return undefined
-            }
-            return { user: JSON.parse(serializedState) }
-        }
-        catch (e) {
-            console.log(e);
-            return;
-        }
+    function closeForgotForm() {
+        $("#forgot-form").removeClass("showForgotForm");
+        $('.forgot-overlay').css({ "display": "none" });
+        $('#forgot').css({ "display": "none" });
     }
 
     return (
-        <div id="reset">
-            <button ><Link to="/">Return To Home Page</Link> </button>
+        <div id="forgot">
+            <div className="forgot-overlay"></div>
             <form className="forgot-form" id="forgot-form" onSubmit={handleSubmit}>
+                <div className="forgot-close" onClick={closeForgotForm}>&times;</div>
+
                 <h1>Forgot Password</h1>
-                <br />
                 <div className="">
                     <label htmlFor="email">Email</label>
-                    <input type="email" className="text" id="email" name="email" />
+                    <input onChange={(e)=>{setEmail(e.target.value)}}type="email" className="text" id="email" name="email" value={email} />
                 </div>
-                <br />
-                <button className="button" >Reset Password</button><br />
+                <button className="btn-forgot" >Reset Password</button><br />
 
-                <p>Back to <Link to="/signin" >Sign In</Link></p>
+                <p style={{ color: "red", cursor: "pointer" }} onClick={() => { closeForgotForm(); openLoginForm() }}>Back to Log In</p>
             </form>
         </div>
     )
