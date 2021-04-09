@@ -109,6 +109,7 @@
 .pc-view:hover {
   text-decoration: none;
   color: #ff8399;
+  cursor: pointer;
 }
 
 .menu-icon {

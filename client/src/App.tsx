@@ -48,8 +48,9 @@ function App() {
         {/* <UserView /> */}
         {/* <UserProf /> */}
         {/* <StarRating /> */}
-        {/* <Login />
-        <Signup /> */}
+        <Login />
+        <Signup />
+        <ForgotPassword />
         {/* <ProviderSignup />  */}
         {/* <Search /> */}
         {/* <Calendar /> */}
@@ -57,6 +58,8 @@ function App() {
         {/* <Header /> */}
         {/* <ServiceProvider/> */}
         {/* <Booking/> */}
+        {/* <ResetPassword /> */}
+
 
         <Switch>
 
@@ -67,9 +70,9 @@ function App() {
           <Route path="/client/signup" component={UsersSignup} />
           {/* <Route path="/providerProfile" exact component={() => < ProviderProf/>} /> */}
           <Route path="/provider" component={ProviderContainer} />
-          <Route path="/auth/users/reset_password/" component={ForgotPassword} />
-          <Route path="/reset/:token" component={ResetPassword} />
-          <Route exact path='/password/reset/confirm/:uid/:token' component={ResetPasswordConfirm} />
+          {/* <Route path="/auth/users/reset_password/" component={ForgotPassword} /> */}
+          {/* <Route path="/reset/:token" component={ResetPassword} /> */}
+          <Route exact path='/password/reset/confirm/:uid/:token' component={ResetPassword} />
           {/* <Route path="/activate/:uid/:token" component={Activate} /> */}
           <Route path="/profiles/provider" component={ProviderProf} />
           {/* <Route path="/profiles/provider" component={Schedule} /> */}
