@@ -40,7 +40,7 @@ const Signup = (props: any) => {
 
                 <div className="signup-close" onClick={closeSignupForm}>&times;</div>
 
-                <h1>Sign Up</h1>
+                <h1>Join Servize</h1>
                 <div className="column">
                     <label htmlFor="username">User Name:</label>
                     <input type="text" className="text" id="username" name="username" ref={register({ required: "required" })} />
