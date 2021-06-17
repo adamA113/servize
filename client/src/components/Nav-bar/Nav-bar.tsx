@@ -50,12 +50,35 @@ const Navbar = () => {
             </div>
 
             <div id="mySidenav" className="sidenav">
+                <div className="sidenav-lang-dropdown">
+                    <button className="sidenav-lang-dropbtn">{t("language")}</button>
+                    <div className="sidenav-lang-dropdown-content">
+                        <span className="pc-view-lang" onClick={() => i18n.changeLanguage("en")}> English</span>
+                        <span className="pc-view-lang" onClick={() => i18n.changeLanguage("ar")}>عربي</span>
+                    </div>
+                </div>
                 <a href="/" className="sidenav-logo">Servize</a>
                 <a href="/" className="closebtn" onClick={closeClick}>&times;</a>
-                <a href="#">About</a>
+                {/* <a href="#">About</a> */}
                 <a href="#">{t("how_it_works")}</a>
                 <a href="#">{t("Browse_Jobs")}</a>
-                <a href="#">Contact</a>
+                
+
+                {token === null ?
+                    <span>
+                        <a href="#" onClick={openLoginForm}>{t("log_in")}</a>
+                        <a href="#" onClick={openSignupForm}>{t("join")}</a>
+                    </span>
+                    :
+                    <div className="user-register">
+                        <div><a href="profiles/user">{t("profile")}</a></div>
+                        <div>
+                            <Button onClick={() => { localStorage.clear(); window.location.href = "/"; }} id="logout">
+                                Logout
+                            </Button>
+                        </div>
+                    </div>
+                }
             </div>
 
             <div className="logo-container">
@@ -74,7 +97,6 @@ const Navbar = () => {
                         <span className="pc-view-lang" onClick={() => i18n.changeLanguage("en")}> English</span>
                         <span className="pc-view-lang" onClick={() => i18n.changeLanguage("ar")}>عربي</span>
                     </div>
-
                 </div>
 
                 {token === null ?
