@@ -142,7 +142,7 @@ export const add = (username: string, email: string) => (dispatch: Dispatch<Disp
 
 export const openLoginForm = () => {
     $("#login-form").addClass("showLoginForm");
-    $('.login-overlay').css({ "display": "block" });
+    $('.overlay').css({ "display": "block" });
     $('#login').css({ "display": "block" });
 }
 
@@ -160,6 +160,12 @@ export const openForgotForm = () => {
     $("#forgot-form").addClass("showForgotForm");
     $('.forgot-overlay').css({ "display": "block" });
     $('#forgot').css({ "display": "block" });
+}
+
+export const closeLoginForm = () => {
+    $("#login-form").removeClass("showLoginForm");
+    $('.overlay').css({ "display": "none" });
+    $('#login').css({ "display": "none" });
 }
 
 export const closeSignupForm = () => {
