@@ -147,8 +147,12 @@ export const openLoginForm = () => {
 }
 
 export const openSignupForm = () => {
+    // var $element = document.getElementsByClassName("App");
+    // var newdiv1 = $("<div class='signup-overlay'></div>");
+    // $(".App").prepend(newdiv1);
+
     $("#signup-form").addClass("showSignupForm");
-    $('.signup-overlay').css({ "display": "block" });
+    $('.overlay').css({ "display": "block" });
     $('#signup').css({ "display": "block" });
 }
 
@@ -156,6 +160,13 @@ export const openForgotForm = () => {
     $("#forgot-form").addClass("showForgotForm");
     $('.forgot-overlay').css({ "display": "block" });
     $('#forgot').css({ "display": "block" });
+}
+
+export const closeSignupForm = () => {
+    // $('.signup-overlay').remove();
+    $("#signup-form").removeClass("showSignupForm");
+    $('.overlay').css({ "display": "none" });
+    $('#signup').css({ "display": "none" });
 }
 
 
