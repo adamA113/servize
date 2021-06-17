@@ -6,8 +6,6 @@ import { useSelector, useDispatch } from 'react-redux';
 // import Usertype from './Usertype'
 import './Signup.css';
 
-import $ from 'jquery';
-
 interface FormData {
     username: string;
     email: string;
@@ -29,7 +27,7 @@ const Signup = (props: any) => {
                     dispatch(signUp(formData.username, formData.email, formData.password));
                 })}
             >
-                
+
                 <div className="signup-close" onClick={closeSignupForm}>&times;</div>
 
                 <h1>Join Servize</h1>

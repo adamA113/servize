@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import './App.css'
-import DatePicker from 'react-datepicker'
+// import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
 
 function Pickdate() {
     const [selectedDate, setSelectedDate] = useState(null)
     return (
         <div className='App'>
-            <DatePicker
+            {/* <DatePicker
                 selected={selectedDate}
                 onChange={date => setSelectedDate(date)}
                 placeholderText={'dd/mm/yyyy'}
@@ -16,7 +16,7 @@ function Pickdate() {
                 filterDate={date => date.getDay() !== 6 && date.getDay() !== 0}
                 showYearDropdown
                 scrollableYearDropdown
-            />
+            /> */}
         </div>
     )
 }

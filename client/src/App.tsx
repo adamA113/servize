@@ -18,9 +18,7 @@ import ProviderContainer from "./components/Provider-container/Provider-containe
 import ServiceProvider from "../src/components/ServiceProvider/ServiceProvider"
 import Booking from "./components/booking/Booking"
 import Activate from './components/Activate';
-// import Search from './components/search/Search';
-
-
+import Overlay from './components/Overlay/Overlay';
 
 import Header from "./components/Header/Header";
 
@@ -31,7 +29,6 @@ import HomePage from "./pages/HomePage";
 import Map from './components/map/map';
 import Categories from "./components/Categories-container/Categories-container";
 import Main from "./components/Main-view/Main-view";
-// import './App.css';
 import Test from "./components/Categories-container/test";
 
 function App() {
@@ -39,6 +36,7 @@ function App() {
     <BrowserRouter>
       <div className="App">
         {/* < Map /> */}
+        <Overlay />
         <Navbar />
         {/* <Test/> */}
         {/* <Catagories /> */}
@@ -48,9 +46,9 @@ function App() {
         {/* <UserView /> */}
         {/* <UserProf /> */}
         {/* <StarRating /> */}
-        <Login />
+        {/* <Login /> */}
         <Signup />
-        <ForgotPassword />
+        {/* <ForgotPassword /> */}
         {/* <ProviderSignup />  */}
         {/* <Search /> */}
         {/* <Calendar /> */}
@@ -63,7 +61,7 @@ function App() {
 
         <Switch>
 
-          <Route exact path="/" component={HomePage} />
+          {/* <Route exact path="/" component={HomePage} /> */}
           <Route exact path="/usertype" component={Usertype} />
           {/* <Route exact path="/" component={Main} /> */}
           <Route path="/prov/signup" component={ProviderSignup} />
