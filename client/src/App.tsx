@@ -46,7 +46,7 @@ function App() {
         {/* <UserView /> */}
         {/* <UserProf /> */}
         {/* <StarRating /> */}
-        {/* <Login /> */}
+        <Login />
         <Signup />
         {/* <ForgotPassword /> */}
         {/* <ProviderSignup />  */}

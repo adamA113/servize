@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { appendErrors, useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
-import { logIn, openSignupForm, openForgotForm } from '../../actions/Users/usersActions';
+import { logIn, openSignupForm, closeLoginForm, openForgotForm } from '../../actions/Users/usersActions';
 import { useSelector, useDispatch } from 'react-redux';
 import './Login.css';
 import $ from 'jquery';
@@ -39,16 +39,8 @@ const Login = (props: any) => {
     // const [access, setAccess] = useState("");
     // const [refresh, setRefresh] = useState("");
 
-    function closeLoginForm() {
-        $("#login-form").removeClass("showLoginForm");
-        $('.login-overlay').css({ "display": "none" });
-        $('#login').css({ "display": "none" });
-    }
-
     return (
-        < div id="login" className="center" >
-
-            <div className="login-overlay"></div>
+        < div id="login">
             <form id="login-form"
                 onSubmit={handleSubmit(async (formData) => {
                     console.log(formData);
