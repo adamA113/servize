@@ -158,7 +158,7 @@ export const openSignupForm = () => {
 
 export const openForgotForm = () => {
     $("#forgot-form").addClass("showForgotForm");
-    $('.forgot-overlay').css({ "display": "block" });
+    $('.overlay').css({ "display": "block" });
     $('#forgot').css({ "display": "block" });
 }
 
@@ -173,6 +173,12 @@ export const closeSignupForm = () => {
     $("#signup-form").removeClass("showSignupForm");
     $('.overlay').css({ "display": "none" });
     $('#signup').css({ "display": "none" });
+}
+
+export const closeForgotForm = () => {
+    $("#forgot-form").removeClass("showForgotForm");
+    $('.overlay').css({ "display": "none" });
+    $('#forgot').css({ "display": "none" });
 }
 
 
