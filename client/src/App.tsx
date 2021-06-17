@@ -48,7 +48,7 @@ function App() {
         {/* <StarRating /> */}
         <Login />
         <Signup />
-        {/* <ForgotPassword /> */}
+        <ForgotPassword />
         {/* <ProviderSignup />  */}
         {/* <Search /> */}
         {/* <Calendar /> */}
