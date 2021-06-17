@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { appendErrors, useForm } from 'react-hook-form';
-import { signUp, openLoginForm } from '../../actions/Users/usersActions';
+import { signUp, openLoginForm, closeSignupForm } from '../../actions/Users/usersActions';
 // import { State } from '../../reducers/Users/usersReducer'
 import { useSelector, useDispatch } from 'react-redux';
 // import Usertype from './Usertype'
@@ -22,22 +22,14 @@ const Signup = (props: any) => {
     const [submitting, setSubmitting] = useState<boolean>(false);
     const [serverErrors, setServerErrors] = useState<Array<string>>([]);
 
-    function closeSignupForm() {
-        $("#signup-form").removeClass("showSignupForm");
-        $('.signup-overlay').css({ "display": "none" });
-    }
-
     return (
-        <div id="signup" className="center">
-
-            <div className="signup-overlay"></div>
+        <div id="signup">
             <form id="signup-form"
                 onSubmit={handleSubmit((formData) => {
-
                     dispatch(signUp(formData.username, formData.email, formData.password));
                 })}
             >
-
+                
                 <div className="signup-close" onClick={closeSignupForm}>&times;</div>
 
                 <h1>Join Servize</h1>
